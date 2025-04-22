@@ -1,4 +1,4 @@
-﻿#tes ini berubah ga dhiii
+﻿#tes ini berubah ga dhiii YESSSSS BERUBAHHH
 
 define K = Character ("Kid")    
 define NT = Character ("Florian")

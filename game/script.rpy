@@ -1,4 +1,5 @@
-﻿
+﻿#tes ini berubah ga dhiii
+
 define K = Character ("Kid")    
 define NT = Character ("Florian")
 define BT = Character ("Asher")

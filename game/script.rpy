@@ -22,14 +22,12 @@ label start:
 
     $ MC = renpy.input("What Is Your Name? ")
     $ LN = renpy.input("What Is Your Last Name? ")
-    HEAD
     
     K "TES TES"
 
     scene oldoutside with fade
     show k happy
 
-    e6ae054f4135e0eb3f49f87cb174ac7f43d2a2ef
     K "“[MC]! [MC]! There you are! What took you so long?“"
     MC "“Sorry... I was talking to my mom.“"
 

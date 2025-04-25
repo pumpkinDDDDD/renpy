@@ -19,10 +19,9 @@ label start:
 
     $ NT_route = 0
     $ BT_route = 0
-
-    $ MC = renpy.input("What Is Your Name? ")
-    $ LN = renpy.input("What Is Your Last Name? ")
     
+    M "makan bang"
+    K "hiii"
     K "TES TES"
 
     scene oldoutside with fade

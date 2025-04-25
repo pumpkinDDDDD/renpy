@@ -21,7 +21,8 @@ label start:
 
     $ MC = renpy.input("What Is Your Name? ")
     $ LN = renpy.input("What Is Your Last Name? ")
-
+    
+    K "TES TES"
     K "“[MC]! [MC]! There you are! What took you so long?“"
     MC "“Sorry... I was talking to my mom.“"
     K  "“That’s okay, what matters is you’re here.“"

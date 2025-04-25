@@ -23,15 +23,22 @@ label start:
     $ MC = renpy.input("What Is Your Name? ")
     $ LN = renpy.input("What Is Your Last Name? ")
 
+    scene oldoutside with fade
+    show k happy
+
     K "“[MC]! [MC]! There you are! What took you so long?“"
     MC "“Sorry... I was talking to my mom.“"
+
+    show k relaxed
     K  "“That’s okay, what matters is you’re here.“"
     MC "TES TES"
-
+    show k grin
     K "“Here, take my hand! I wanna show you something!“"
     MC "“Okay! Where are we going?“"
     K "“You’ll see, close your eyes! It’ll be a surprise!“"
     MC "“Sure?“"
+
+    scene grey with fade
     MC "“Are we there yet?“"
     K "“Nope!“"
     MC "“...“"
@@ -52,17 +59,26 @@ label start:
     MC "“...“"
     MC "(We’ve stopped.)"
     K "“You can open your eyes now.“"
+
+    scene oldgreenhouse with fade
     MC "“Woahh! There’s so many flowers here!“"
+    show k grin
     K "“I know right? I stumbled here by accident. I haven’t told anyone else about this place!“"
     MC "“I didn’t think we had a place like this in town...“"
+    show k relaxed
     K "“So, do you like it?“"
     MC "“Yea! Thanks for bringing me here.“"
     MC "“You really haven’t told anyone else about this place?“"
+    show k happy
     K "“Not a soul. This place is gonna be just for us.“"
     MC "“Promise?“"
-    MC "(He smiles back at me in response before looking away and fidgeting around with something in his pockets for a bit. After a deep breath he finally stares back at me.)"
+    show k w
+    "He smiles back at me in response before looking away and fidgeting around with something in his pockets for a bit. After a deep breath he finally stares back at me."
+    show k relaxed
     K "“Actually, I've got something to give you.“"
     MC "“What is it?“"
+
+    scene cg1 with fade
     MC "(His right hand disappeared into his pocket and when it emerged again, he was holding a plastic ring the shape of a flower. By the looks of it, it originally had 5 petals but broke at some point before this.)"
     K "“Uh, here. I got you this. I’m sorry that it’s missing a petal.“"
     K "“I-uhh broke it...sorry.“"
@@ -72,20 +88,28 @@ label start:
     MC "“Uh huh! Thanks a lot!“"
     K "“Can I...put it on you?“"
     MC "“Sure!“"
-    
+    scene oldgreenhouse
     MC "(I reach out my hand towards him and he gently holds it before slipping the plastic ring into my pointer finger. I’m not actually sure which one is the 'ring finger’ but maybe it is this one?)"
     MC "(Well, even if it isn’t, I’m happy to get a present anyway!)"
+    show k relaxed
     K "“Here, now you’ll always have me with you in spirit.“"
     K "“If you ever miss me but I’m busy, just look at the ring and remember me.“"
+    show k worried
     K "“[MC], we’ll be friends forever right?“"
     MC "“Sure! But...“"
+    show k betrayed:
+        linear 0.050 xoffset -10
+        linear 0.050 xoffset +0
+        linear 0.050 yoffset -10
+        linear 0.050 yoffset +0
     K "“But..?!“"
     MC "“Mom said we’ll be moving soon, I won’t see you again for a while or...Ever?“"
     MC "“Sorry... That’s why I was late earlier.“"
     K "“[MC]...! You said you’d always stick with me!“"
     MC "“I’m sorry, I really am!“"
     K "“[MC] you liar!“"
-    
+
+    scene car with vpunch
     MC "(What was that..?)"
     MC "(That felt oddly familiar...)"
     M "“What’s wrong dear?“"

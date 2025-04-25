@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 845: expected ':' not found.
-    label start19
-                 ^
+File "game/script.rpy", line 25: expected statement.
+    HEAD
+        ^
+
+File "game/script.rpy", line 32: expected statement.
+    e6ae054f4135e0eb3f49f87cb174ac7f43d2a2ef
+                                            ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Sun Apr 20 22:56:15 2025
+Fri Apr 25 23:24:52 2025

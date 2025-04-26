@@ -519,100 +519,164 @@ label start9:
 label start10:
     show nt normal
      NT "“I guess we’re definitely stopping by the cafe later.“"
+    show bt happy
      BT "“Gotta show our guest around our favorite places!“"
 
 
     scene cafeday
+    show bt grinning
      BT "“Here we are! Best cafe in town as far as I’m concerned.“"
+    show bt smile at right
+    show nt relaxed at left
      NT "“I can’t disagree with you there.“"
+    show bt chill
      BT "“You guys want anything?“"
 
      menu:
          "Nope.":
+            show bt normal
              BT "“Suit yourself.“"
+            show nt normal
              NT "“Let’s search for a seat then.“"
 
+
+            show nt normal at center
+            hide bt
              NT "“Where would you like to sit, [MC]?“"
              MC "“That corner sure looks cozy.“"
+            show nt happy
              NT "“I’m glad you agree, that’s my regular seat.“"
+            show nt silent
              W "“Ash- wait no. Sorry, wrong twin. Hard to tell from behind.“"
              W "“Florian, you back in town?“"
+            show nt normal
              NT "“Yes, I'll be staying here for spring break.“"
              W "“Nice, is that your partner?“"
              if NT_route >= 1:
-                 NT "placeholder sprite nt embarrassed"
+                 show nt embarrassed
              else:
-                 BT "nt normal"
+                 show nt normal
                  NT "“Not at all, [MC]’s a friend.“"
                  W "“Sorry man, I thought you two seemed close.“"
+                show nt grinning
                  NT "“I suppose we are, aren’t we, [MC]?“"
                  MC "“I don’t know about that chief, I learned your name an hour ago.“"
+                show nt happy
                  NT "“You have me there.“"
                  jump start11
 
 
          "Sure":
+            show nt silent
              MC "“I’ll take this one.“"
+            show bt smirk
              BT "“Nice!“"
+            show bt chill
+            BT "“I think I'll order my regular“"
+            show nt normal
              NT "“I’ll save a seat for us.“"
+            hide nt
+            show bt smile at center
              B "“Heyy Asher, haven’t seen you in a while.“"
+            show bt smirk
              BT "“Obviously, I moved out for college remember?“"
              B "“That your partner?“"
              if BT_route >= 1:
-                 BT "Show sprite bt embarrassed"
+                 show sprite bt bangry
              else:
-                 NT "Show sprite bt normal"
+                 show sprite bt normal
                  BT "“No stupid, [MC]’s a friend.“"
                  B "“My bad, you two seem pretty close.“"
+                show bt wink
                  BT "“Damn right, we are.“"
                  MC "“I wouldn’t say that, we’ve only seen each other again like an hour ago.“"
+                show bt smirk
                  BT "“Didn’t we used to play together?“"
+                show bt happy
                  BT "“You wound me, [MC].“"
                  B "“All right enough you two, here’s your drink.“"
+                show bt chill
                  BT "“Thanks man.“"
                  jump start11
 
 label start11: 
      "walking sfx"
+    show bt normal at right
      BT "“We’re not sitting down?“"
+    show nt normal at left
      NT "“Now we are.“"
-     "sprite zoom in"
+    show bt smile at right:
+        parallel:
+            ease .5 zoom 1.3
+    show nt silent at left:
+        parallel:
+            ease .5 zoom 1.3
+     "sprite zoom in tes ini pas atau kaga pls"
      MC "(I know they look pretty similar but when you see them side by side like this you really see their individuality seep through.)"
      MC "(Asher’s sitting like he owns the damn cafe while Florian has his legs crossed together politely.)"
+    show nt sdnormal
      NT "“I feel like you visit this place too frequently.“"
+    show bt sdhuh
+    show nt silent
      BT "“You kiddin’?  I haven’t been here in ages.“"
+    show nt sdnormal
      NT "“The waiters tend to say your name instead of mine.“"
+    show bt questioning
      BT "“No way! They all know you.“"
+    show nt normal
      NT "“Yes, but their first instinct seems to say that you are the one more likely to visit.“"
+    show bt chill
      BT "“I guess I was here a lot.“"
+    show nt grinning
      NT "“Especially back in those college entrance exam prep days.“"
+    show nt grin
+    show bt questioning
      BT "“Oh man, don’t even talk about those.“"
      MC "“Did you study at the cafe?“"
+    show bt chill
      BT "“Errday.“"
      MC "“I feel like you’d rack up quite the bill if you bought a drink everyday.“"
+    show bt happy
      BT "“Nah it's cool, they let me study here without buying anything.“"
+    show nt normal
      NT "“Don’t cafes usually kick people like you out?“"
+    show bt smirk
+    show nt silent
      BT "“Not this cafe. Come on, most people here have known us since kindergarten.“"
      MC "“Kindergarten? How come I wasn't brought here then? I don’t remember ever being here.“"
+    show nt happy
      NT "“That’s a missed opportunity, I’ll take you here again while you’re here.“"
+    show bt happy
      BT "“I’ll take you to other places too, this town’s a treasure trove of places like this.“"
      MC "“Since we all got into the same college, how did you study for the entrance exam, Florian?“"
+    show nt normal
      NT "“Oh I didn't need to.“"
+    show bt sdangry
      BT "“Bastard got in by recommendations.“"
+    show nt sdnormal
      NT "“That’s what you get for not having a certificate.“"
+    show bt sdrolledeyes
      BT "“Yea okay, Mr. National Champion.“"
+    show nt grinning
      NT "“It was nice getting a few extra weeks of vacation while you were busy studying.“"
+    show bt sdangry
      BT "“Shut it jackass, this is why i didn’t wanna study at home.“"
+    show nt normal
      NT "“How did you get in, [MC]?“"
      menu:
          "I got in by recommendations too.":
+            show bt sdrolledeyes
              BT "“Oh come onnn.“"
+            show nt grinning
              NT "“Welcome to the team, [MC]“"
+            show bt angry
              BT "“I hate you two.“"
              jump start12
 
          "The entrance exams.":
+            show nt happy
              NT "“I see you have a friend.“"
+            show bt happy
              BT "“Damn right, glad to hear that.“"
              NT "“You two sure worked hard.“"
              jump start12
@@ -620,98 +684,142 @@ label start11:
 label start12:
      "Phone notif sfx"
      if BT_route >= 1:
+        show nt questioning
          NT "“Oh? That’s unfortunate.“"
+        show bt questioning
          BT "“What’s up?“"
+        show nt normal
          NT "“I have urgent business, something about the lab report.“"
          NT "“I’ll have to return home and take care of it, see you two later.“"
          MC "“That sucks, good luck with that!“"
+        show bt smirk
          BT "“See ya, dude!“"
+        hide nt
+        show bt smile at center
          "door close sfx"
          MC "“So which one of you did I play with, huh?“"
+        show bt smirk
          BT "“You still haven’t figured it out?“"
          MC "“No stupid, it’s not like you two were dropping hints.“"
          MC "“‘Sides, people change a lot in ten years, no?“"
+        show bt chill
          BT "“I like to think that some things stay the same no matter how much time passes.“"
          MC "“Some things do, but most don’t.“"
          MC "“What have you been up to the past ten years?“"
+        show bt happy
          BT "“Nothin much, just breezing through life.“"
          MC "“What’s the story behind the piercing? I don’t remember that.“"
+        show bt wink
          BT "“Felt like it, looks good yea? Made it myself.“"
+        show bt happy
          BT "“I gave Florian the other side.“"
          MC "“Legit? You made it yourself?“"
          BT "“Yea, gotta keep my hands busy somehow.“"
 
          menu : 
              "Didn’t you make me a bracelet before I left?":
+                show bt chill
                  BT "“I did, didn’t I?“"
                  BT "“You can throw it away if it looks bad.“"
                  MC "“Nuh uh, that thing’s gonna be my family heirloom.“"
+                show bt shy
                  BT "“You kept it?“"
                  MC "“Yea? I’m not throwing away something made by a friend.“"
                  MC "(Especially when I had a crush on said friend.)"
+                show bt bchill
                  BT "“That’s... awfully nice of you.“"
+                show bt grinning
                  BT "“I’ll make you a better one i swear.“"
                  jump start13
 
              "Can you make one for your dear friend?":
+                show bt happy
                  BT "“I might.“"
                  BT "“We can use it to show how close we are.“"
                  MC "“Are we really?“"
+                show bt wink
                  BT "“Why not? We’re sitting together face to face, and now that Florian’s gone, it’s like we’re on a date.“"
                  MC "“Slow down there, we’ve just reunited.“"
+                show bt grinning
                  BT "“You’ve heard of ‘Slow burn’ get ready for ‘Speed Inferno’!“"
                  jump start13
 
          label start13:
+            show bt smile
              MC "“I guess talking to you has started to stir up old memories.“"
+            show bt happy
              BT "“Like going to the library? We used to do that a lot.“"
              MC "“You can say that.“"
+            show bt smirk
              BT "“Speaking of the library, I gotta tell you this story.“"
              MC "“Ooh, spill.“"
+            show bt happy
              BT "“Back then I went to the library like I always do yea? And when I came to borrow the book they said I already borrowed something and I can't borrow anything else until I return the previous one!“"
              MC "“Why didn’t you return the book?“"
+            show bt questioning
              BT "“I didn’t have anything to return!“"
              BT "“And when I asked about it, they said I just borrowed it like 5 hours ago!“"
              BT "“And I know that’s not true because I was at the playground!“"
              MC "“Then what happened?“"
+            show bt happy
              BT "“I asked them what book I borrowed and when they said it was the sixth book in a fantasy series I haven't read yet, I knew Florian was the culprit.“"
+            show bt grinning
              BT "“Turns out he was using my card and pretending to be me!“"
              MC "“Really? But he seems so mild mannered.“"
+            show bt smirk
              BT "“Don’t be fooled, that guy’s a little shit.“"
+            show bt chill
              BT "“I’m glad he wasn’t using my library card to borrow something weird but still, I had to drag his ass back to the library so I could borrow my pick.“"
              MC "“Something weird? Like what, ‘how to commit arson 101’?“"
+            show bt grinning
              BT "“Nah he’s more of a ‘how to get away with murder’ kinda guy.“"
              MC "“So what did you want to borrow?“"
+            show bt happy
              BT "“It was a pattern book, I was learning to sew.“"
              BT "“Not that i’m any good at it now.“"
+            show bt sdhuh
              BT "“Man would’ja look at the time.“"
+            show bt happy
              BT "“We should head back before anyone worries.“"
              MC "“Let’s go then.“"
              jump start15
 
      else:
+        show bt angry
          BT "“Aww man, the fuck?“"
+        show nt sdnormal
          NT "“Is something wrong?“"
+        show bt normal
          BT "“Yea, got a meeting for the exhibition prep in like 10 minutes. I guess spring break means jack shit to them.“"
          BT "“I’m gonna have to rush home, see y’all later.“"
          MC "“That sucks, good luck with that!“"
+        show nt normal
          NT "“Goodbye.“"
+        show nt silent
          "door close sfx"
          MC "“So which one of you did I play with? Care to give me any hints?“"
+        show nt normal
          NT "“Do you need any? I thought you would’ve figured it out by now.“"
+        show nt silent
          MC "“Yes I do need them.“"
          MC "“Tell me something about yourself, what have you been up to the past 10 years?“"
+        show nt normal
          NT "“The usual, I go to school, I go to the library and I study at home.“"
+        show nt silent
          MC "“Awfully studious aren’t you?“"
          MC "“Got anything else in your life?“"
+        show nt relaxed
          NT "“I guess I used to watch the TV with Asher, we were big ninja reptile fans.“"
          MC "“There you go, that’s something.“"
          MC "“What’s the story behind the piercing? I didn’t peg you to be the type.“"
+        show nt normal
          NT "“Asher made it, he’s wearing the other pair.“"
+        show nt happy
          NT "“I didn’t want to wear it at first but I suppose it is nice to have something that reminds you of home.“"
          
          menu: 
              "Like that letter you wrote me?":
+                show nt sdquestioning
                  NT "“I apologize if the letter seemed rather childish, I’m sure the paper has crumpled by now, you can throw it out if you’d like.“"
                  MC "“As if, I've kept that thing as pristine as it was when you gave it to me.“"
                  MC "“I still read it from time to time y’know? Your words will forever be immortalized in my head.“"

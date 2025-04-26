@@ -154,6 +154,7 @@ label start:
             
     
 label start2:
+    scene outsideday with fade
     M "“Ready to go in?“"
     MC "“As ready as I’ll ever be.“"
     MD "“Coming!“"
@@ -185,37 +186,68 @@ label start2:
     MC "“What about now?“"
     MD "“Now? They’ve grown into their personal preferences so it is easier to tell them apart.“"
     MD "“It doesn’t stop them from pretending to be each other though...“"   
+    show bt normal
     BJ "“Mom? Do we have company?“"
     MC "(!!)"
+    show nt normal at left
+    show bt normal at right
     BV "“I didn’t think we’d have guests.“"
     MD "“Speak of the devil.“"
+    show nt sdnormal
+    show bt sdglare
+    "..."
+    show nt questioning
     BV "“Is that...[MC]?“"
+    show bt chill
     BJ "“The one that used to live next door?“"
     MD "“Yes it is, now be polite and introduce yourselves. [MC] and her mother will be staying with us throughout spring break.“"
+    show nt normal
     BV "“Seriously?“"
+    show bt grinning
     BJ "“Sweet!“"
 
+    show bt wink
     BT "“I’m Asher, but you already know that yea? After all, we were soo close back then?“"
+    show nt happy
     NT "“Don’t kid yourself. I’m Florian, nice to see you again.“"
+    show nt sdnormal
+    show bt sdglare
     MC "(This does not help.)"
     MD "“So which one of you two used to play with [MC] here?“"
+    show nt normal
+    show bt angry
     Bo"“Me, obviously.“"
+    show nt sdnormal
+    show bt sdglare
 
     MC "(Upon hearing that, Ms. Diascia buries her head into her hand while my mom worriedly looks at me for confirmation. Unfortunately I have to silently mouth ‘no’ to her as I also don’t have any answers.)"
+    show nt grin
+    show bt smile
     MC "(Meanwhile, the twins relish in our confusion with smiles on their faces.)"
+    show bt smirk
     BT "“Oh come on mom, it’s not our fault you used to buy us practically identical matching outfits. If you give us clothes like that, we’re gonna exploit it.“"
+    show nt normal
     NT "“Even we can’t tell our clothes apart.“"
+    show bt happy
     BT "“Yeaa, pretty sure we gave up and started wearing whatever.“"
     MD "“There were subtle differences.“"
+    show bt smirk
     BT "“Too subtle.“"
+    show nt happy
     NT "“Definitely.“"
     MD "“Come on, don’t you feel bad for [MC] here?“"
+    show bt normal
     BT "“Surely [MC] can recognize which one of us it was, no?“"
+    show nt normal
     NT "“For your information, it really was only one of us.“"
+    show bt smirk
     BT "“The question is, which one?“"
     MD "“Boys, just tell the truth already...“"
+    show bt grinning
     BT "“Nope!“"
+    show nt grinning
     NT "“How about no?“"
+    show nt grin
     MC "(Ms. Diascia looks towards me and leans closer, whispering in my ear.)"
     MD "{size=-10}“I know my boys well enough to know when they’re telling the truth, this is one of those moments.“{/size}"
     MD "{size=-10}“It really was only of of them.“{/size}"
@@ -225,35 +257,58 @@ label start2:
     MC "(Noticing my current state of confusion, Ms. Diascia opens her mouth.)"
     MD "“Oh I almost forgot, boys why don’t you help carry the [LN] family’s belongings into our guest room?“"
     MD "“I’m sure they could use the help.“"
+    show bt chill
     BT "“Sure.“"
+    show nt normal
     NT "“Fine.“"
 
-
+    scene guestroomday with fade
+    show bt happy
     BT "“There you are, all done!“"
+    show nt normal at left
+    show bt smile at right
     NT "“You don’t need help unpacking too, do you, [MC]?“"
      
     menu:
          "I don’t knoww maybe I do?":
+            show bt smirk
              BT "“In that case I’ll be happy to help.“"
              jump start3
 
          "No need, I’ll be fine.":
+            show nt relaxed
              NT "“That’s good to hear.“"
              jump start3
 
 label start3:
+    show bt happy
     BT "“Anyway, come outside when you feel like it. I’ll take you on a short walk around town, things have changed since the last time we’re together.“"
+    show nt normal
     NT "“He’s mistaken, I believe he means you and {b}I{/b}.“"
+    show nt sdnormal
+    show bt sdglare
 
     MC "“Yea okay, I still don’t know which one of you it is.“"
+    show bt smirk
     BT "“Really [MC]? After all we’ve been through? You wound me.“"
+    show nt normal
     NT "“To be fair, we’ve had practically zero contact since our last meeting.“"
     NT "“Take your time, I’m sure you’ll figure it out.“"
+    show bt wink
     BT "“Yea we’ll give you some space for now, just remember our walk later!“"
     BT "“I’ll be waiting~“"
- 
+
+    show bt angry:
+        linear 0.050 xoffset -10
+        linear 0.050 xoffset +0
+        linear 0.050 yoffset -10
+        linear 0.050 yoffset +0
+        repeat 2
     BT "{size=-10} “Ow! What was that for?!“{/size}"
+    show nt silent
     NT "“Hmph.“"
+    hide bt
+    hide nt
 
     MC "(Those two sure are a handful, I wonder how Ms. Diascia deals with them.)"
     MC "(After stepping foot in Gardenville again for the first time in a while, I feel like my memories of this place are resurfacing.)"

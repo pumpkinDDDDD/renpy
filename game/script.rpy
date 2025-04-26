@@ -315,47 +315,61 @@ label start3:
     MC "(Especially the ones of{i} him{/i}...)"
     MC "(What was he like again?)"
     MC "(From what I remember he was...)"
+    scene oldoutside
     
     menu:
          "Pretty quiet in front of other people.":
               MC "(I remember having to speak up for him whenever someone spoke to us, not that I mind.)" 
               $ NT_route +=1
               ST "“Ah the Diascia’s boy, how are you doing?“"
+                show k neutral
               K "“...”"
               MC "“He’s doing fine.“"
               ST "“Is that your friend?”"
+                show k w
               MC "“That means yes!“"
               jump start4
 
          "Loud and rambunctious, he really couldn’t shut up.":
               MC "(It was nice that the conversation never died down awkwardly though.)"
               $ BT_route +=1
+                show k happy
               K "“[MC] ! I gotta tell you something! You won’t believe what happened!“"
               MC "“What is it? Wait, you've got another scratch!“"
+                show k grin
               K "“It’s no biggie! Doesn’t hurt a bit!“"
               MC "“You sure?“"
+                show k relaxed
               K "“Yea! Anyway, as I was saying...“"
               jump start4  
               
 label start4:    
+    scene oldoutside with fade
     MC "(He’s always liked to read, we used to go to the library all the time.)"
     menu:
          "We had a blast trying out the crafts in those activity books.":
               $ BT_route +=1
+                show k happy
               K "“So if I follow this, then we can have our own binoculars for our adventure!“"
+                show k side
               K "“Ignoring the fact that they don’t actually work...“"
+                show k relaxed
               K "“[MC] , what’re you making?“"
               MC "“I’m making our travel kit! Look here’s our passports!“"
+                show k grin
               K "“Sweet! You even included my swords! You’re the best [MC]!“"
               jump start5
 
          "I loved hearing him read to me.":
               $ NT_route +=1
+                show k relaxed
               K "“And so, Thumbelina flew on the swallow's back and arrived at a beautiful flower field. There she meets a flower-fairy prince just her size and they lived happily ever after.“"
               K "“The End.“"
               MC "“That was great! Can I get another one?“"
+                show k worried
               K "“You’re not bored?“"
               MC "“Why would I be? I like hearing you talk.“"
+                show k happy
               K "“Thanks [MC]!“"
               jump start5
 

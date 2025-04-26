@@ -795,7 +795,8 @@ label start12:
          MC "“That sucks, good luck with that!“"
         show nt normal
          NT "“Goodbye.“"
-        show nt silent
+        hide bt
+        show nt silent at center
          "door close sfx"
          MC "“So which one of you did I play with? Care to give me any hints?“"
         show nt normal
@@ -870,51 +871,80 @@ label start12:
              jump start15
 
 label start15:
-     "Scene housefrontnight"
+     scene outsideevening with fade
      MC "“(That sure was fun.)"
      MC "(Who knew talking to an old friend or meeting a new one would be so fun?)"
      MC "(Although, the more I talk to him the more confident I am that he was the one I played with.)"
      MC "(The one that gave me the...ring.)"
-     MC "(I wonder if there is a surefire way I can know. I’m pretty sure if I ask either twin they’d say that they were the childhood friend.)"
+     MC "(I wonder if there is a surefire way I can know. I’m pretty sure if I ask either twin they’d lie and say that they were the childhood friend.)"
+     MC "(After all, if there was anything that stayed the same, it was that they liked messing with people.)"
      MC "(Maybe I can ask him about the ring?)"
      MC "(Nah, if I got the wrong twin I’m pretty, I’m pretty sure that twin will tease me to no end.)"
+     MC "(And that'd be pretty hard to get over when you all live in the same house, even if just momentarily)"
      MC "(I need something really private, something only the two of us share. Something that’ll make it really clear that it was that specific twin.)"
+     MC "(Something that not even his twin would know about)"
      MC "(There’s gotta be something right?)"
-     Bo "“You’re not coming in?“"
+     if BT_route >= 1:
+        show bt happy
+        BT "“You’re not coming in?“"
+     else :
+        show nt normal
+        NT "“You’re not coming in?“"
      MC "“I am, wait up.“"
+    scene inside
+     MC "We're back!"
      MC "(Once we entered the home, I can see that Ms. Diascia and Mom have set the table ready for dinner. The smell of the hot soup warms my heart and stomach. I feel like I’m about to start drooling.)"
      MC "“Things like this really hammer it home that I'm back, like for real.”"
      MD "“Just in time you two, grab a seat we’re ready for dinner.“"
+     MC "Oh great!"
      M "“[MC], I made your favorite.“"
      MC "“Thanks mom.“"
+     MC "(Man, it sure smells great)
+     MD "Come sit down [MC], we've set the table for all of you already."
+     MC "Thankyou Ms Diascia."
+     "I proceeded to pull out a chair right next to my mother with Ms Diascia and those two sitting opposite from us."
      MD "“So where did the three of you go?“"
+     show nt silent at left
+     show bt happy at right
      BT "“We took her to the best cafe in town obviously.“"
+     show nt normal
      NT "“You can tell it was Asher’s idea.“"
+     show bt grinning
      BT "“Nothin' like a good drink to kick off our return!“"
      MD "“I do hope you’re not constantly drinking those sugary drinks back at campus.“"
+     show bt chill
      BT "“Nah, I know when to hold back.“"
+     show nt sdnormal
      NT "“For some reason I don't buy that.“"
      
      menu: 
          "Me neither, you should’ve seen how fast that drink disappeared.":
+             show bt questioning
+             show nt grin
              BT "“Not you too, have some faith in me, why dontcha'?“"
              jump start16
 
          "Have some faith in him, I'm sure he’s fine.":
+             show nt happy
+             show bt smile
              NT "“A rare occasion, someone’s on your side."
              jump start16
 
 label start16:            
      M "“Now now, let’s continue our dinner in peace. Shall we?“"
      MD "“Yes we shall.“"
+     show bt normal
      BT "“Right, sorry Ms. [LN].“"
 
-     "Scene guestroom with fade"
+     scene guestroomnight1 with fade
      MC "(Man, dinner was good.)"
      MC "(Honestly I can’t remember the last time I’ve had a meal on a table surrounded by people like this.)"
      MC "(Kinda nice, actually.)"
+     MC "(I feel like college has ruined my eating habits a little.)"
      MC "(Now that I’ve had something in my stomach, I should probably start unpacking things.)"
+     MC "(I really should've just shoved my stuff into a suitcase, i don't know why i decided to box them.)"
      MC "(Maybe I can start with that box over there?)"
+     scene box
      "*rustling through stuff sfx"
      "*Enter drag and drop"
      "*If nt_route≥2 "
@@ -934,6 +964,7 @@ label start16:
      MC "(I mean, I already have my suspicions on which one it is but I like having irrefutable evidence at hand.)"
 
      if NT_route >= 1:
+        show nt journal
          "Friday, X-X-XX13"
          MC "(Nice! I should still be around during this time.)"
          "Dear diary, I played with the neibor again today It was fun and it was good and they were nice to me."
@@ -955,6 +986,7 @@ label start16:
          jump start17
 
      else:
+         show bt journal
          "Friday, XX13"
          MC "(Nice! I should still be around during this time.)"
          "Found a sick place!!!! Will show neibor later!! Has flowers and really pretty!!!!"

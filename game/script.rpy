@@ -378,23 +378,31 @@ label start5:
      menu:
          "He made me a friendship bracelet.":
               $ BT_route +=1
+                scene guestroomday with fade
               MC "(Now that I think about it, it was shoddily made but I like it anyway.)"
               MC"“(It has its own special place on my desk.)"
+                scene oldoutside with fade
+                show k relaxed
               K "“[MC] before you leave, I'd like you to have this.“"
+                show k side
               K "“Uhh ignore the fact that it’s kinda falling apart at the seams.“"
               MC "“It’s okay, I’ll treasure it the same!“"
               jump start6
 
          "He wrote me a letter.": 
              $ NT_route +=1
+            scene guestroomday with fade
              MC "(I remember that I can see some bumps on the paper, those gotta be from his tears.)"
              MC "(I still have it stored safely in my drawer.)"
+            scene oldoutside with fade
+            show k side
              K "“[MC] umm here.“"
              K "“Don’t open it now okay? Read it when you have time.“"
              MC "“I sure will!“"
              jump start6
 
 label start6:
+    scene guestroomday with fade
      if NT_route >= 1:
          MC "(Maybe it was Florian who I hung out with?)"
          jump start7
@@ -406,75 +414,115 @@ label start6:
 label start7:
      MC "(Then again, I won’t know for sure until I actually talk to them.)"
      MC "(Guess I gotta go on that walk with 'em first.)"
+    scene inside
      MC "(When I entered the living room, I found the twins lounging on the couch. Asher was fidgeting around with pliers and chains in his hands while Florian was absorbed in his book.)"
      MC "(I don’t think either of 'em has noticed me yet.)"
 
      menu:
          "What are you making?":
+            show bt angry:
+                linear 0.050 xoffset -10
+                linear 0.050 xoffset +0
+                linear 0.050 yoffset -10
+                linear 0.050 yoffset +0
              BT "“Geez, don’t scare me like that, [MC].“"
+            show bt chill
              BT "“I would’ve dropped my pliers if my grip was any looser.“"
              MC "“Sorry, you ready to go?“"
+            show bt happy
              BT "“Uh huh.“"
              BT "“Florian let’s go!“"
              jump start8
 
          "What’re you reading?":
+            show nt surprised:
+                linear 0.050 xoffset -10
+                linear 0.050 xoffset +0
+                linear 0.050 yoffset -10
+                linear 0.050 yoffset +0
              NT "(!!!)"
+            show nt questioning
              NT "“[MC], you surprised me.“"
              MC "“Sorry, are you ready for that walk?“"
+            show nt normal
              NT "“I am.“"
              NT "“Come on Asher, let’s go.“"
              jump start8
 
 label start8:
+    scene outsideday with fade
      MC "(Here I am, setting foot on Gardenville dirt once more.)"
      MC "(I didn’t get a chance to take a good look earlier but standing around the front of their house sure brings back memories.)"
      MC "(This is definitely somewhere I used to play at all the time.)"
      MC "(Makes me wonder why I’ve only found out about his twin now, especially if it really was only one of 'em that I played with.)"
+    show bt happy
      BT "“Something caught your eye, [MC]?“"
+    show bt smile at right
+    show nt normal at left
      NT "“You’ve been spacing out for a while.“"
      MC "“Not really, it’s just been a while is all.“"
+    show bt chill
+    show nt silent
      BT "“It has hasn’t it? Even I haven’t seen this yard for a while.“"
      MC "“Because of college right? Your mom told me.“"
      BT "“Yea, we moved out of town for college.“"
+    show nt normal
      NT "“It’s nice to finally see home after so long.“"
+    show nt silent
      MC "“If you two don’t mind me asking, which college did you go to?“"
+    show bt normal
+    show nt normal
      Bo "“ Begonia’s Institute of Technology.“"
      MC "(!!!)"
      MC "“No WAY!“"
      MC "“I go there too!“"
+    show nt questioning
      NT "“Really?“"
+    show bt pleasant
      BT "“That’s nuts! What a coincidence.“"
+    show nt normal
      NT "“How come we haven’t seen you around campus.“"
      
      menu: 
          "Maybe we have but we didn’t recognize each other?":
+            show bt chill
              BT "“I guess it has been 10 years.“"
              jump start9
          
          "Dunno, I guess we don’t have any classes together":
+            show nt happy
              NT "“That sounds reasonable.“" 
              jump start9
 
 label start9:
+    show bt smirk
      BT "“Anyway, let’s actually start heading up yea? Times a wastin’.“"
+    show nt normal
      NT "“Whatever you say, although I’m willing to bet that you’re just itching for an excuse to buy a snack.“"
+    show bt sdrolledeyes
+    show nt silent
      BT "“It’s not an excuse. Isn’t this a legitimately perfect time to grab a snack?“"
+    show bt smirk
      BT "“You want one don’t you, [MC]?“"
 
      menu: 
          "Definitely.":
+            show bt wink
              BT "“I know it! My treat!“"
              jump start10
 
          "Not really?":
+             show bt grinning
              BT "“More for me!“"
              jump start10
 
 label start10:
+    show nt normal
      NT "“I guess we’re definitely stopping by the cafe later.“"
      BT "“Gotta show our guest around our favorite places!“"
 
+
+    scene cafeday
      BT "“Here we are! Best cafe in town as far as I’m concerned.“"
      NT "“I can’t disagree with you there.“"
      BT "“You guys want anything?“"

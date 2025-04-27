@@ -1303,50 +1303,79 @@ label start21:
          MC "“But what?“"
          NT "“I..I...“"
          MC "“What is it?“"
-         "*nt zoom in sini"
+         show nt sick:
+            parallel:
+                ease .5 zoom 2.0
+            parallel:
+                yalign 0.0
+                linear 0.0 yalign 0.0 xalign 0.5
          MC "(Suddenly his head falls to my shoulders and he starts to grip the sleeves of my shirt. He's not holding it too tightly but it’s noticeable enough that I'd feel bad if I moved away.)"
          MC "(He’s so close I can hear him breathing and with a low quiet voice he lets out...)"
+         show nt brelaxed
          NT "[MC]...Can you please stay like this for a while? I..I think I'm sick.“"
          MC "(Bingo! He’s still pulling out the sick card.)"
          MC "“Yea I can, are you okay?“"
          MC "(I know damn well he’s okay.)"
          NT "“Not really? I don’t feel-“"
+         show nt sdnormal at left
+         show bt happy at right
          BT "“Yo! What are you two doing?“"
+
          "*disini Nt tetap zoom in tp dia dikiri, BT nongol normal sized di kanan"
          MC "“Florian’s sick apparently.“"
+         show bt wink
          BT "“{i}Sick{/i}, huh?“"
          MC "(Oh he knows all right.)"
+         show nt normal
          NT "“Yes I am.“"
          BT "“I don’t knowww, you seemed fine earlier.“"
          NT "“Well that was earlier.“"
+         show bt smirk
          BT "{i}“Oh no, my poor twin, whatever shall I do when you’re terribly ill?“{/i}"
+         show nt sdangry
+         show bt smile
          NT "“Asher...“"
          "(Angry sprite)"
          MC "(He’s completely fooling around by this point.)"
-         MC "“When Asher eventually looks at me, my expression must’ve given me away because he soon gives me a knowing smirk as if to say ‘i gotchu dude!’.“"
+         "When Asher eventually looks at me, my expression must’ve given me away because he soon gives me a knowing smirk as if to say ‘i gotchu dude!’."
+         show bt wink
          BT "“Say [MC], let’s go out on the town together. Just the two of us.“"
+         show bt smirk
          BT "“Y’know while Florian’s sick and all.“"
          BT "“The medicine’s on the top shelf if he needs any.“"
          BT "“Whaddya say, [MC]?“"
+         show nt surprised
+         show bt smile
          MC "“Hmm, that’s a tempting offer.“"
+         show nt questioning
          NT "“But, [MC]...“"
+         show nt sick
          MC "“His grip on my sleeves starts to tighten and I can faintly hear him grumble under his breath.“"
          MC "“Actually, I'm afraid I'll have to change my mind. I’ll stay here and take care of Florian.“"
+         show bt smirk
          BT "{i}“Oh my! You worry so much about him! Maybe I'll also stay home and help you nurse him back to health.“{/i}"
          BT "“I can’t leave you two {i}alone{/i} together.“"
+         show nt sdangry
+         show bt smile
          MC "(For a brief moment Florian seems to forget that I’m right next to him and I can see him quietly mouth ‘fuck you’ to Asher, this action doesn’t seem to affect Asher as his smirk seems to only get more annoying.“"
+         show bt smirk
          BT "“Oh wait, I don’t have to worry do I?“"
          BT "“[MC]’s right there to take care of you yea?“"
          BT "“I’ll just...go around town and leave you two all alone.“"
+         show bt wink
          BT "“See y'all!“"
          "*door closed sfx"
-         "*hide bt, sprite nt balik ke tengah"
+         hide bt
+         show nt silent at center
          MC "(I’m glad he caught on so quickly, now it’s just me and him in the house.)"
          MC "“So would you like to lay down?“"
          NT "“Yes please.“"
          MC "“Alright then, do you want anything else? Some medicine perhaps?“"
          NT "“Can you...Stroke my head?“"
          MC "“Sure...“"
+         NT "“Thank you [MC], this feels...“"
+         NT "“..nice.“"
+         MC "“Glad to hear that“"
          MC "“Although...You’re not really sick, are you?“"
          NT "(!!)"
          NT "“What makes you think that, [MC]?“"
@@ -1361,6 +1390,7 @@ label start21:
          NT "“Well, you have me there...“"
          MC "“You’re not lying this time, right?“"
          NT "“No? But to be fair, any liar can just say that.“"
+         NT "“I wonder what i can do to prove it to you“"
          MC "“I know how you can prove it.“"
          NT "“How...?“"
          MC "“Take me back to the place with all the flowers, the one you showed me the day I told you I was moving.“"
@@ -1540,7 +1570,7 @@ label start21:
 
          "Scene garden with fade"
          MC "(So it was here.)"
-         MC "(It hasn’t been any last magnificent as I’ve last seen it in my memories.)"
+         MC "(It hasn’t been any less magnificent as I’ve last seen it in my memories.)"
          MC "“So, where are we?“"
          BT "“Gardenville Museum’s failed ex-greenhouse and botany exhibition.“"
          MC "“What? Are we allowed in here?“"
@@ -1552,13 +1582,15 @@ label start21:
          BT "“Snuck out during our field trip to the museum.“"
          MC "“No way! No wonder I couldn't find you. I searched the whole museum back then.“"
          BT "“Sorry about that.“"
+         BT "“But we still ended up walking home together, didn't we?“"
+         MC "“I guess we did.“"
          BT "“Anyway...umm can...I say something?“"
          MC "“What is it?“"
          BT "“Remember when I gave you a ring back then?“"
          MC "“Yea?“"
          BT "“Are we still...friends forever? Like, did you ever miss me?“"
          BT "“Cause’ I missed you, but I couldn’t contact you at all.“"
-         BT "“I didn’t have your number, and I guess I was too embarrassed to ask my MOm for it.“"
+         BT "“I didn’t have your number, and I guess I was too embarrassed to ask my Mom for it.“"
          BT "“And since you didn’t contact me, I figured you forgot about me.“" 
          BT "“So I tried forgetting about you but I just couldn’t, and now that you’re back it feels...“"
          BT "“Everything I've been holding back just bursted out and now I can't stop saying stupid shit in front of you.“"
@@ -1605,7 +1637,7 @@ label start21:
          MC "(I don’t quite know what the future has in store for us, but I'm sure if 10 years of separation isn’t enough to pull us apart then nothing will.)"
          "THE END : Asher's Route"
 
-
+# bang, endingnya kalau bisa kita coba ada transisi fade biar ga lgsg abrupt kaya si gr
 
 
 

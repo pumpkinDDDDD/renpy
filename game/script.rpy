@@ -1369,75 +1369,105 @@ label start21:
          show nt silent at center
          MC "(I’m glad he caught on so quickly, now it’s just me and him in the house.)"
          MC "“So would you like to lay down?“"
+         show nt sick
          NT "“Yes please.“"
          MC "“Alright then, do you want anything else? Some medicine perhaps?“"
          NT "“Can you...Stroke my head?“"
          MC "“Sure...“"
+         show nt relaxed
          NT "“Thank you [MC], this feels...“"
          NT "“..nice.“"
+         show nt grin
          MC "“Glad to hear that“"
          MC "“Although...You’re not really sick, are you?“"
+         show nt surprised
          NT "(!!)"
+         show nt questioning
          NT "“What makes you think that, [MC]?“"
          MC "“You don’t really change your modus operandi, you used to do the exact same thing back then!“"
          MC "“Remember how you used to pretend to be sick just so I don’t play with other kids?“"
+         show nt sdquestioning
          NT "“I didn’t...“"
          MC "“But you did, after all {b}you{/b} are the one I played with aren’t you, Florian?“"
          NT "“What makes you think that?“"
          MC "“Well I had my suspicions yesterday, but the whole ‘sick act’ thing really sealed the deal for me.“"
          MC "“So? Any rebuttals?“"
+         show nt silent
          NT "“...”"
+         show nt questioning
          NT "“Well, you have me there...“"
          MC "“You’re not lying this time, right?“"
+         show nt normal
          NT "“No? But to be fair, any liar can just say that.“"
          NT "“I wonder what i can do to prove it to you“"
          MC "“I know how you can prove it.“"
          NT "“How...?“"
          MC "“Take me back to the place with all the flowers, the one you showed me the day I told you I was moving.“"
+         show nt brelaxed
          NT "“You still remembered?“"
          MC "“I never forgot!“"
+         show nt normal
          NT "“Let me take you there, right now.“"
          MC "“I’m not closing my eyes this time.“"
+         show nt grin
          MC "(He responds with a grin, as cheeky as the Cheshire cat and he takes my hand and leads me outside the house.)"
+         scene outsideday
          MC "(We went past all the other houses in the neighborhood, past the old playground we used to go to, past our elementary school and eventually, to the north wing of the park.)"
          MC "(He takes me through several bushes and an overgrown path which eventually lead to a pipe big enough for a human to crawl through and after squeezing through a brick wall, we made it.)"
 
-         "Scene garden with fade"
+         scene greenhouse with fade
          MC "(So it was here.)"
          MC "(It hasn’t been any last magnificent as I’ve last seen it in my memories.)"
          MC "“So, where are we?“"
+         show nt normal
          NT "“Gardenville Museum’s Greenhouse or what’s left of it.“"
          MC "“We’re allowed here, right?“"
+         show nt grin
          NT "“...”"
          MC "“Oh no, that’s not good.“"
+         show nt grinning
          NT "“Well it’s nothing punishable by law, probably.“"
          MC "“That’s not very reassuring, how did you find this place anyway?“"
+         show nt happy
          NT "“Nothing major, I simply went on my very own little journey during our field trip to the museum.“"
          MC "“Seriously? I went ages looking for you back then.“"
+         show nt relaxed
          NT "“I believe I apologized for that, did I not? We even walked home together.“"
          MC "“I guess you did.“"
+         show nt normal
          NT "“Straying off topic, I have a question for you.“"
          MC "“Shoot.“"
+         show nt sdquestioning
          NT "“Remember the ring I gave you? Do you...still regard me as your friend? Even after all these years?“"
          NT "“I’ve thought of contacting you all this time but I never knew how, after all I forgot to ask for your new address. I couldn’t send you a letter.“"
          NT "“I was afraid asking my mother may bring unwanted questions so I suppose I never asked.“"
          NT "“I did try to distract myself from thinking about you by studying but that didn’t bring the effects I wanted.“"
          NT "“You still remain as a constant thought in my mind all this time.“"
          NT "“So, what I'm trying to say is...“"
+         show nt brelaxed
          NT "“I had a crush on you back when we were children, I suppose you must’ve noticed by the way I pretend to be sick whenever someone is stealing you away from me.“"
          NT "“You were always so patient with me, you’ve always spoken up for me when I had trouble doing so.“"
          NT "“You listen to what I say even when I'm sure it must’ve been quite boring and you seem to entertain my selfish little whims.“"
          NT "“Now that you have returned, I can confirm that those feelings I've had were not misplaced.“"
          NT "“I...love you.“"
          MC "(After all this time, he still...Damn it, I guess I also still love him.)"
+         show nt happy
          NT "“[MC], I see the way you are staring at me. I believe your expression means something positive, no?“"
          NT "“If you’d like to kiss me there is no need for such pretenses. You may do it whenever the mood strikes you.“"
          MC "“You sure are forward with it.“"
+         show nt grinning
          NT "“Am I mistaken in my assumption?“"
          MC "“Not at all.“"
-
+         scene grey with fade
          MC "“With that, I draw him into a kiss as gentle as it is passionate. I find my hands grabbing him by the waist while his hands roam around my back.“"
          MC "“In that slight moment, it feels like all time has stopped. It was only when we started running out of breath did we remember to breathe again.“"
+         scene greenhouse with fade
+         show nt brelaxed:
+            parallel:
+                ease .5 zoom 2.0
+            parallel:
+                yalign 0.0
+                linear 0.0 yalign 0.0 xalign 0.5
          NT "“[MC]...“"
          MC "“Here, I still have the ring.“"
          NT "“You kept it...“"
@@ -1474,61 +1504,93 @@ label start21:
 
      else:
          MC "“What are you doing?“"
+         show bt shy:
+            linear 0.050 xoffset -10
+            linear 0.050 xoffset +0
+            linear 0.050 yoffset -10
+            linear 0.050 yoffset +0
          BT "(!)"
+         show bt angry
          BT "“Geez, ya gotta stop spookin’ me like that.“" 
          MC "“My bad.“"
          MC "“But really, what are you doing today?“"
+         show bt happy
          BT "“Oh I’m planning on starting on my projects for class.“"
+         show bt questioning
          BT "“Can you believe I have to lug around that giant bag back home? It’s insane how big they want us to make these things.“"
+         show bt happy
          BT "“Enough about me though, what are you doing?“"
+         show bt smirk
          BT "“Although judging by the fact that you’re approaching me, I'm guessing you wanna hang out with me?“"
          MC "(It’s go time.)"
          MC "“Nah actually I’m planning on going with Florian instead, he said he was gonna take me to that cafe again since he left early yesterday.“"
+         show bt normal
          BT "“Oh.“"
+         show bt chill
          BT "“I can join you two?“"
          MC "“Nah, we already spent a long time in the cafe yesterday.“"
+         show bt happy
          BT "“Well in that case, have fun! I’ll be back here if you need me.“"
+         show bt sdglare at right
+         show nt normal at left
          NT "“[MC]? What are you doing?“"
          MC "(Oh shit, the real guys here!)"
+         show nt surprised
          MC "There you are, I was waiting for you, let's go!“"
+         show nt grin
          MC "(I give him a pleading glance, I'm just hoping he understands and goes along with it. He’s seemingly confused for a moment until he looks over at Asher and his lips curl up into the smallest little grin.)"
+         show nt happy
          NT "“My apologies, [MC]. Sorry for my tardiness. Let’s go shall we?“"
          MC "“Yes, let's go.“"
+         show nt grinning
          NT "“Be nice and guard the house while {i}I{/i} go with [MC] okay?“"
+         show bt sdrolledeyes
          BT "Yea, yea whatever.“"
 
-         "Scene outside with fade"
+         scene outsideday with fade
          MC "“Thanks for playing along.“"
+         show nt normal
          NT "“So what are you planning?“"
          MC "“Before I answer that, I've got a quick question.“"
          NT "“Go ahead.“"
          MC "“Tell me a spot in town with lots of flowers and a waterfall.“"
          NT "“There’s a place like that in town?“"
+         show nt silent
          MC "“I check his expression for any hints of a lie but his face remains as neutral as always, I can't seem to find any falsehoods in his words.“"
          MC "“Don’t lie to me, if you know then spill.“"
+         show nt normal
          NT "“I’m not aware of the location, if anything that seems more like Asher’s spot. You might want to ask him.“"
          MC "“Alright then, that tells me all I need.“"
+         show nt happy
          NT "“I believe it’s time you answer my question, no?“"
          MC "“I’m getting to it. So y’know how some people say they’re cool with something but then they sulk about it later?“"
+         show nt sdnormal
          NT "“Sounds like the sort of stupid thing Asher does.“"
          MC "“Precisely!“"
+         show nt grinning
          NT "“I see what you’re planning now.“"
          MC "“He used to do it back then, I figured he’d do something similar now.“"
+         show nt happy
          NT "“Good thing he still does.“"
+         show nt grinning
          NT "“If you want to peek at his reactions, try that window over there. He’s never been good at hiding for long, you’ll start hearing him grumble soon enough.“"
          MC "“Thanks man, you’re surprisingly helpful, y’know that?“"
+         show nt questioning
          NT "“Surprisingly?“"
          MC "“Never mind, thanks for the help.“"
+         show nt normal
          NT "“Sure thing, I'll be at the library if you need me.“"
          MC "(Moment of truth.)"
 
-         "Scene inside with fade"
+         scene inside with fade
          "*entar bikin asset jendela, layer aja diatas sprite"
+         show bt angry
          BT "{size=-7} “Stupid [MC]...goin’ out with Florian instead, hmph!“{/size}"
          BT "{size=-7}“Even though it was me you played with...“{/size}"
          BT "{size=-7}“Whatever, I guess I'll just start sketchin’ while they’re gone.“{/size}"
          BT "{size=-7}“Stupid [MC]...Should’ve been with me.“{/size}"
          MC "“What was that?“"
+         show bt bangry
          BT "(!!!)"
          BT "“[MC] what the fuck?? You really gotta stop that y’know?“"
          MC "“My baddd.“"

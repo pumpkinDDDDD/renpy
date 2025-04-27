@@ -141,7 +141,9 @@ label start:
     MC "“Just to make sure, we’re talking about the Diascias right?“"
     M "“Yep, I’ve been in contact with Ms. Diascia and she has kindly agreed to let us stay.“"
     MC "“The ones who live next door and have pink hair? Has a son my age??“"
-    M "“The one and only. Speaking of which, we’re here!“"
+    M "“The one and only. I figured staying with them for spring break might cheer you up, no?"
+    MC "“Really mom? .“"
+    M "Speaking of which, we’re here!“"
     
     menu:
          "Goodie.":
@@ -157,7 +159,9 @@ label start2:
     scene outsideday with fade
     M "“Ready to go in?“"
     MC "“As ready as I’ll ever be.“"
+    "Knocking sfx"
     MD "“Coming!“"
+    "door opening sfx"
     MC "(After a few hurried footsteps the door finally opened and out came a beautiful middle aged woman.)"
     MD "“Oh! Lovely to see you two after so long. The [LN] family, yes? You used to live next door ten years ago? I believe you’ll be staying with us for spring break?“"
     M "“That’s right, good to see you haven’t changed much Diana. You seem well.“"
@@ -168,35 +172,40 @@ label start2:
     M "“I’m just joking dear.“"
     MD "“Anyway, why are we standing in the doorway? Come on in!“"
 
+    scene inside with fade
     MD "“Welcome inside! You can put your bags over there, I'll get the boys to move your suitcases into the guest room later.“"
     MD "“I’m sure you can’t wait to meet them [MC]. After all, you used to be so close with one of them!“"
     MD "“Although I will admit, I’m not sure which one it was.”"
     MD "“They were very hard to tell apart back then, and I was so busy I barely spent time with my boys.“"
-    MC "(What?? D-does this mean that there were-)"
+    MC "(What?? Hard to tell apart? D-does this mean that there were-)"
     MC "“I’m sorry, hold up a sec. 'One of them'? 'Boys'? As in 'Plural'??“"
     MD "“You didn’t know [MC]? My boys are twins.“"
-     
+     scene inside with vpunch
     MC "“WHAT???”"
     MC "“T-THEN, W-WHICH ONE DID I PLAY WITH??“"
     MC "“He never told me his name!”"
     M "“I must admit I'm also a little surprised, I thought you only had one kid.“"
     MD "“{b}Those boys...{/b}, they did it again.“"
     MD "“See the thing is, they used to pretend to be one person in front of strangers all the time.“"
+    MD "“They've always found it funny whenever other people are confused.“"
+    MD "“Which is precisely why at the very least, i had to make sure they were in seperate classes.“"
     MD "“Inside the house however, they would pretend to be each other. Telling them apart was impossible back then.“"
     MC "“What about now?“"
-    MD "“Now? They’ve grown into their personal preferences so it is easier to tell them apart.“"
-    MD "“It doesn’t stop them from pretending to be each other though...“"   
+    MD "“Now? They’ve grown into their personal preferences so it is much easier to tell them apart.“"
+    MD "“It doesn’t stop them from occasionally pretending to be each other though...“" 
+    MD "“They especially love to mess with the barber.“"
     show bt normal
     BJ "“Mom? Do we have company?“"
     MC "(!!)"
     show nt normal at left
-    show bt normal at right
+    show bt smile at right
     BV "“I didn’t think we’d have guests.“"
     MD "“Speak of the devil.“"
     show nt sdnormal
     show bt sdglare
     "..."
     show nt questioning
+    show bt smile
     BV "“Is that...[MC]?“"
     show bt chill
     BJ "“The one that used to live next door?“"
@@ -237,7 +246,7 @@ label start2:
     NT "“Definitely.“"
     MD "“Come on, don’t you feel bad for [MC] here?“"
     show bt normal
-    BT "“Surely [MC] can recognize which one of us it was, no?“"
+    BT "“Surely [MC] can recognize which one of us it was, no? Especially since we were insperable back then?“"
     show nt normal
     NT "“For your information, it really was only one of us.“"
     show bt smirk
@@ -248,6 +257,8 @@ label start2:
     show nt grinning
     NT "“How about no?“"
     show nt grin
+    show bt smile
+    MD "“Oh come on.“"
     MC "(Ms. Diascia looks towards me and leans closer, whispering in my ear.)"
     MD "{size=-10}“I know my boys well enough to know when they’re telling the truth, this is one of those moments.“{/size}"
     MD "{size=-10}“It really was only of of them.“{/size}"
@@ -792,6 +803,7 @@ label start12:
         show bt normal
          BT "“Yea, got a meeting for the exhibition prep in like 10 minutes. I guess spring break means jack shit to them.“"
          BT "“I’m gonna have to rush home, see y’all later.“"
+         show bt smile
          MC "“That sucks, good luck with that!“"
         show nt normal
          NT "“Goodbye.“"
@@ -825,46 +837,63 @@ label start12:
                  MC "“As if, I've kept that thing as pristine as it was when you gave it to me.“"
                  MC "“I still read it from time to time y’know? Your words will forever be immortalized in my head.“"
                  MC "(Especially because it was something from someone I had a crush on.)"
+                 show nt questioning
                  NT "Did you really...?“"
+                 show nt brelaxed
                  NT "“That’s.. rather embarrassing to hear.“"
                  MC "“It’s not embarrassing at all, i treasured the letter.“"
+                 show nt relaxed
                  NT "“Thank you, [MC]...“"
                  jump start14
 
              "Maybe we should have something like that?":
+                 show nt normal
                  NT "“Like what? Something matching?“"
                  MC "“Yep!“"
                  MC "(Maybe like that ring I got...? If that even is from him)"
+                 show nt questioning
                  NT "“That would make it sound like we’re together, no?“"
                  MC "“Did you not claim that we were close before?“"
+                 show nt brelaxed
                  NT "“I suppose I did.“"
                  jump start14
 
          label start14:       
              MC "“Talking to you brings back old memories y’know?“"
+             show nt happy
              NT "“Does it now? I suppose we did spend a lot of time together.“"
              NT "“We used to frequent the library, did we not?“"
              MC "“We did, got any stories on that? Maybe ones after I wasn't around anymore?“"
+             show nt normal
              NT "“Let’s see...“"
              NT "“I suppose there was this time Asher committed identity theft at the library.“"
              MC "“What??“"
              MC "(That’s a pretty serious word, I was looking for a lighthearted story.)"
+             show nt sdangry
              NT "“He was awful.“"
              MC "“Okay, tell me about it.“"
+             show nt normal
              NT "“I was rushing after classes so I could borrow the 6th ‘Miracles of Lumina’ book from the library.“"
              NT "“But when I got there, I was told I couldn't borrow the book because I hadn't returned the previous one.“"
              NT "“I was completely sure that I'd returned the previous one, so I asked them about it.“"
+             show nt angry
              NT "“They claimed I had borrowed a guide on crocheting that morning, that’s when I knew it was his doing!“"
              MC "“That guy can crochet?“"
+             show nt happy
              NT "“He made half of a scarf and forgot about it.“"
+             show nt normal
              NT "“As it turns out he was using my library card to pretend to be me so he could borrow more books at the same time.“"
              MC "“I guess that does count as ‘identity theft’.“"
              MC "(Albeit, at a small scale.)"
+             show nt happy
              NT "“I suppose I'm just glad he didn’t borrow anything weird.“"
              MC "“Like what? ‘How to commit arson 101'?“"
+             show nt grinning
              NT "“I believe he’s more likely to borrow a ‘How to commit tax evasion’ book.“"
+             show nt grin
              MC "“I see it.“"
              MC "“Oh shoot, it’s getting dark.“"
+             show nt normal
              NT "“Would you like to return?“"
              MC "“Yea. I'd rather not stay out late.“"
              NT "“Let us be on our way then.“"
@@ -955,7 +984,15 @@ label start16:
 
      MC "(Wait a minute. This isn’t my stuff.)"
      MC "(Did I open the wrong box?)"
-     MC "(Honestly, this looks more like something Asher or Florian would have.)"
+
+     if BT_route >= 1:
+     MC "(Honestly, this looks more like something Asher would have.)"
+     jump afterbox
+     else:
+     MC "(Honestly, this looks more like something Florian would have.)"
+     jump afterbox
+
+ label afterbox:
      MC "(...)"
      MC "(I've got an idea.)"
      MC "(Potentially a horrible trust ruining idea but I think I need the help.)"
@@ -969,6 +1006,7 @@ label start16:
          MC "(Nice! I should still be around during this time.)"
          "Dear diary, I played with the neibor again today It was fun and it was good and they were nice to me."
          "I am very bappy."
+         "I won a ring at the capsul machine, want to give to neibor"
          MC "(Aww, this is pretty cute.)"
          "Saturday, X-X-XX13"
          "I feel really angry asher broke the ring I was gonna give the neighbor (I just learned how to spell it) and it broke and now it doesn’t look good. I tried fixing it with the glue stick but it didnt work. I cant tell mom to fix it because I dont want her to know."
@@ -1009,8 +1047,10 @@ label start17:
      MD "“[MC], are you in here?“"
      MC "(!!!)"
      MC "(Shit, I gotta hide this.)"
+     scene guestroomnight1
      MC "(Quickly I shove it back under the bed and hid it as best as I can. Hopefully she won’t notice that I’ve been snooping through his old belongings.)"
-     MC "“I am Ms. Diascia!“"
+     MC "“I am Ms. Diascia! Wait a sec!“"
+     "door opening sfx"
      MD "“[MC], I forgot to tell you something.“"
      MC "“What is it?“"
      MD "“I forgot to completely clear out the room before you got here, so if there are some extra boxes they’re probably the twins' old things.“"
@@ -1018,18 +1058,23 @@ label start17:
      MC "(Too late for that, I already went as far as reading their childhood journal.)"
      MC "“Oh okay, thanks for telling me.“"
      MD "“Sure thing, have a good night, [MC]. I hope you’ll enjoy your stay here.“"
+     MC "“If you need anything, just call okay?.“"
+     MC "“Sure thing.“"
      MC "“Goodnight Ms. Diascia.“"
+     MD "“Goodnight [MC].“"
      "*door close sfx"
      MC "(Yikes, that was close.)"
      MC "(And worse of all, all that snooping made me forget that I was supposed to unpack my all my stuff.)"
      MC "(Guess I gotta get on with it.)"
 
-     "Scene guest room with wipeleft"
+     scene guestroom1 with wipeleft
      MC "(Well, that covers most of it?)"
      MC "(Pretty sure the other boxes are Mom’s)"
      MC "(I stretch my arms and back from all the soreness that comes with unpacking and I look at the clock.)"
      MC "(Guess it’s that late huh? I should sleep.)"
      MC "(I share this guest room with my Mom but I guess she isn’t sleepy yet?)"
+     "Going up to the door, i place my ear against it to try and hear what mom's up to. Through the door, i can hear faint laughter coming from the living room."
+     MC "(I guess she's having a good time with Ms Diascia)"
      MC "(Oh well, I’ll sleep first.)"
 
      "Scene guestroomnight with fade"
@@ -1049,16 +1094,20 @@ label start17:
              jump start18
 
 label start18:
-     "Scene housefrontdream with fade"
-     if NT_route >= 2:
+     scene oldoutside with fade
+     if NT_route >= 1:
+         show k worried
          K "“[MC]? Where are you going?“"
          MC "“Oh! My Mom told me to go with the other neighborhood kids to the playground.“"
+         show k betrayed
          K "“But why? I thought we were gonna play together?“"
          MC "“I dunno either, but it might be fun once in a while, wanna come with?“"
+         show k side
          K "“I-“"
          OK "“[MC]! you coming?“"
          MC "“Wait a sec!“"
-         MC "“Before I can turn around to face him again, I feel his head on my back. He grips the side of my shirt and with a low and quiet voice he starts...”"
+         "Before I can turn around to face him again, I feel his head on my back. He grips the side of my shirt and with a low and quiet voice he starts..."
+         show k worried
          K "“[MC]...“"
          MC "“What is it? Are you okay?“"
          K "“I think I’m sick.“"
@@ -1071,14 +1120,17 @@ label start18:
 
          "Scene insidedream with fade"
          MC "“There we go! You’re all cozy now.“"
+         show k relaxed
          K "“Thank you, [MC]?“"
          MC "“Do you need any medicine?“"
          K "“Nope, I just need you to stay with me.“"
          MC "“Okay.“"
          K "“...”"
          MC "“What are you sick with anyway? You were fine earlier.“"
+         show k side
          K "{size=-10}“...that’s because I’m just pretending so you wouldn’t go.“{/size}"
          MC "“What was that? Sorry, couldn’t hear you.“"
+         show k relaxed
          K "“I-I don’t know either but I’m sure I’ll get better soon.“"
          MC "“Okay then!“"
          K "“Just...stay with me until mom gets back okay, [MC]?“"
@@ -1086,44 +1138,65 @@ label start18:
          jump start19
 
      else:
+        
+         show k grin
          K "“[MC]!“"
          MC "“What is it? I’m about to leave.“"
+         show k worried
          K "“Leave? Leave where?! Aren’t you gonna hang out with me?“"
          MC "“Oh! My Mom told me to go with the other neighborhood kids to the playground.“"
-         K "“Oh okay, I'll go to Jacob’s house then. Have fun but not as much as when you’re with me!!“"
+         show k grin
+         K "“Oh okay, I'll go to Jacob’s house then. Have fun but remember to play with me later!!“"
          MC "“Okay! Byee!!“"
          K "“See you later, [MC]!!“"
          "Scene insidedream with fade"
          MC "“Heyy!! I’m here now!!“"
          MC "“...”"
          MC "(He’s not answering.)"
+         show k worried
          K "“[MC]?“"
          MC "“I’m here to play with you now!“"
          K "“But it’s getting late now, are you sure?“"
          MC "“Yep! I live next door anyway.“"
+         show k relaxed
          K "“Okay...Did you have fun earlier?“"
          MC "“uh huh.“"
+         show k happy
          K "“But I’m still number 1 yea? You won’t leave me right? You’ll still come back and play with me?“"
          MC "“Of course!“"
+         show k relaxed
          K "“That’s...good.“"
          MC "“Quick question, what’s all the tissues on the table from? Did you spill something?“"
-         K "“Ignore that, I forgot to clean up.“"
+         show k side
+         K "“Ignore that, I forgot to clean up. I'll do it now“"
+         show k neutral
          MC "“Actually, your eyes are red! Did you cry...?“"
+         show k side
          K "“No...“"
          MC "“You’re lying!! You were, that’s why your pants are on fire now.“"
+         show k betrayed
          K "“No they’re not, stupid.“"
          MC "“You wanted to play with me so bad!“"
+         show k worried
          K "“No...“"
          MC "“I thought you played with Jacob?“"
+         show k relaxed
          K "“I did, but I like you more.“"
          MC "“Really?“"
+         show k side
          K "“Maybe...“"
          MC "“That’s okay you can play with me now!“"
+         show k relaxed
          MC "“I’ll always stick with you!“"
          jump start19
 
 label start19:
-     "Scene guestroom with fade"
+     scene guestroomday with fade
+     scene grey with fade
+     scene guestroomday with fade
+     scene grey with fade
+     scene guestroomday with fade
+     scene grey with fade
      "*disini ganti scene ke black/grey terus balik (repeat brp kali biar kaya mc nge-blink)"
      MC "(What...was that?)"
      MC "(Huh.)"
@@ -1132,30 +1205,47 @@ label start19:
      MC "(Guess that’s what he did back then, I wonder if he’ll still have a similar reaction?)"
      MC "(Hmm, that’s what I’ll have to find out today.)"
 
-     "Scene inside with fade"
+     scene inside with fade
      MC "“Mornin'.“"
+     show bt grinning
      BT "“Mornin’!“"
+     show nt normal at left
+     show bt smile at right
      NT "“Good morning, [MC].“"
+     show nt neutral
      M "“You’re up pretty early, [MC]. I thought you would sleep in since it’s spring break.“"
      MC "“I guess I couldn't continue sleeping, I had a dream.“"
+     show bt smirk
      BT "“Is it of me?“"
+     show nt wink
      NT "“Must be a nightmare then.“"
+     show bt sdangry
      BT "“Hey!“"
+     show nt grinning
      NT "“If it was of me on the other hand-“"
+     show bt smirk
+     show nt sdnormal
      BT "“Then it’d be even worse!“"
      
      menu:
          "It is related to one of you actually.":
+             show bt grinning
              BT "“See I was right!“"
+             show nt happy
+             show bt sdglare
              NT "“One of us. It might not be you.“"
              jump start20
          
          "I don’t knoww.":
+             show bt grinning
              BT "“Come onn, don’t keep me guesin’!“"
+             show nt normal
              NT "“Shut up already.“"
              jump start20
 
 label start20:
+     show nt silent
+     show bt smile
      MD "“Boys, please have your breakfast in peace.“"
      MD "“I’m sure [MC] will get a headache if you keep bantering this early.“"
      MD "“Anything you’d like, [MC]?“"
@@ -1178,7 +1268,7 @@ label start20:
              jump start21
 
 label start21:
-     "Scene inside with fade"
+     scene inside with fade
      MC "(Is the coast clear? Any one that can disturb my plans?)"
      MC "(Ms. Diascia and Mom left earlier for a little ‘Mom Hangout’ at the nearby mall, so there shouldn’t be anyone else in the house.)"
      MC "(Now that the mornings practically done, I can get on with my actual plan for today.)"
@@ -1188,17 +1278,26 @@ label start21:
 
      if NT_route >= 1:
          MC "“Whatcha doin'?“"
+         show nt surprised
          NT "(!)"
+         show nt questioning
          NT "“[MC]...You need to stop surprising me like this.“"
+         show nt silent
          MC "“Sorry, I'll stop.“"
          MC "“But really, what are you doing today?“"
+         show nt normal
          NT "“well not much, but I’m planning on picking up writing during break.“"
          NT "“Then maybe, I'll study ahead for midterms later.“"
          MC "(Yikes, I forgot we had those.)"
+         show nt happy
          NT "“Anyway, if you’re striking up a conversation with me, I can only assume that you’ve taken interest in me. So, what are you doing today, [MC]?“"
          MC "“Oh you know, nothing much. But I was thinking of going around town with Asher later, he did say the town is a treasure trove of cool places.“"
+         show nt questioning
          NT "“What?“"
+         MC "“Yea, i'm planniing on it being just the two of us.“"
+         MC "“Especially since i already spent time yesterday with you.“"
          MC "“Or I might visit the other neighbors, I think 10 years away from here is enough for a reunion, no?“"
+         show nt sdquestioning
          NT "“But, [MC] I-I...“"
          MC "(There we go, the cracks are starting to show.)"
          MC "“But what?“"

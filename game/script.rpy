@@ -355,7 +355,7 @@ label start3:
               jump start4  
               
 label start4:    
-    scene oldoutside with fade
+    scene oldinside with fade
     MC "(He’s always liked to read, we used to go to the library all the time.)"
     menu:
          "We had a blast trying out the crafts in those activity books.":
@@ -431,7 +431,7 @@ label start7:
 
      menu:
          "What are you making?":
-            show bt angry:
+            show bt surprised:
                 linear 0.050 xoffset -10
                 linear 0.050 xoffset +0
                 linear 0.050 yoffset -10
@@ -1335,7 +1335,6 @@ label start21:
          show nt sdangry
          show bt smile
          NT "“Asher...“"
-         "(Angry sprite)"
          MC "(He’s completely fooling around by this point.)"
          "When Asher eventually looks at me, my expression must’ve given me away because he soon gives me a knowing smirk as if to say ‘i gotchu dude!’."
          show bt wink
@@ -1380,7 +1379,7 @@ label start21:
          show nt grin
          MC "“Glad to hear that“"
          MC "“Although...You’re not really sick, are you?“"
-         show nt surprised
+         show nt embarassed
          NT "(!!)"
          show nt questioning
          NT "“What makes you think that, [MC]?“"
@@ -1469,6 +1468,7 @@ label start21:
                 yalign 0.0
                 linear 0.0 yalign 0.0 xalign 0.5
          NT "“[MC]...“"
+         show nt embarassed
          MC "“Here, I still have the ring.“"
          NT "“You kept it...“"
          MC "“I did.“"
@@ -1504,13 +1504,13 @@ label start21:
 
      else:
          MC "“What are you doing?“"
-         show bt shy:
+         show bt surprised:
             linear 0.050 xoffset -10
             linear 0.050 xoffset +0
             linear 0.050 yoffset -10
             linear 0.050 yoffset +0
          BT "(!)"
-         show bt angry
+         show bt questioning
          BT "“Geez, ya gotta stop spookin’ me like that.“" 
          MC "“My bad.“"
          MC "“But really, what are you doing today?“"
@@ -1583,7 +1583,7 @@ label start21:
          MC "(Moment of truth.)"
 
          scene inside with fade
-         "*entar bikin asset jendela, layer aja diatas sprite"
+         show bvn window
          show bt angry
          BT "{size=-7} “Stupid [MC]...goin’ out with Florian instead, hmph!“{/size}"
          BT "{size=-7}“Even though it was me you played with...“{/size}"
@@ -1597,55 +1597,76 @@ label start21:
          BT "“You sure don’t look like you feel bad about it, where’s Florian anyway?“"
          BT "“Thought you were going out with him.“"
          MC "“Changed my mind! And more importantly...I heard that!“"
+         show bt angry
          BT "“Heard what?“"
          MC "“Everything you said. Starting from 'Stupid [MC]' and 'It was me you played with...!' and every other thing you said.“"
+         show bt bangry
          BT "“I do not sound like that!“"
          MC "“Yea you do.“"
+         show bt surprised
          MC "“Actually wait a minute, let me climb through the window here.“"
+         show bt questioning
          BT "“The doors right there!“"
          MC "“I know, but this is faster.“"
          "*thump sfx"
+         scene inside with vpunch
+         show bt surprised
          MC "“Anyway, back on topic. You can’t fool me anymore, I know it was you who I played with!“"
+         show bt bangry
          BT "“You just said that because you heard me say it!“"
          MC "“Nope, I had my suspicions yesterday and your actions today proved it!“"
          MC "“What you said just sealed the deal.“"
+         show bt questioning
          BT "“Huh? What did I do that gave it away?“"
          MC "“That! Y’know, the way you get all huffy if I play with someone else even though you told me to have fun earlier!“"
          MC "“You used to do that too back then.“"
+         show bt bangry
          BT "“That’s barely proof!“"
          MC "“I know what else can be proof.“"
          MC "“Take me to that place again, the one with all the flowers and the waterfall.“"
          MC "“The one you took me to the day I told you I was moving.“"
+         show bt shy
          BT "“You still remember?“"
          MC "“I never forgot.“"
          BT "“[MC]...you...“"
+         show bt bangry
          BT "“Aw shit, I'm getting sentimental.“"
          MC "“You can cry if you want?“"
+         show bt smirk
          BT "“No, not yet. I can’t take you there if I can't see the way.“"
          BT "“Let’s go.“"
          MC "“I don’t have to close my eyes this time, right?“"
+         show bt smile
          MC "(No words were spoken, but something tells me that his smirk says it all.)"
 
-         "Scene outside with fade"
+         scene outsideday with fade
          MC "(He grabs my hand and leads me outside the house, past all the other houses in the neighborhood, past the old playground we used to go to, past our elementary school and eventually, to the north wing of the park.)"
          MC "(He takes me through several bushes and an overgrown path which eventually lead to a pipe big enough for a human to crawl through and after squeezing through a brick wall, we made it.)"
 
-         "Scene garden with fade"
+         scene greenhouse with fade
          MC "(So it was here.)"
          MC "(It hasn’t been any less magnificent as I’ve last seen it in my memories.)"
          MC "“So, where are we?“"
+         show bt chill
          BT "“Gardenville Museum’s failed ex-greenhouse and botany exhibition.“"
          MC "“What? Are we allowed in here?“"
+         show bt smirk
          BT "“This place used to cost actual tickets to go in, now it’s free.“"
          MC "“But are we allowed in here?“"
+         show bt sdhuh
          BT "“Umm...good question, I don’t know.“"
+         show bt questiioning
          BT "“But no one else is ever in here! Besides, the place shut down a decade before we were born.“"
          MC "“How did you find this place anyway?“"
+         show bt happy
          BT "“Snuck out during our field trip to the museum.“"
          MC "“No way! No wonder I couldn't find you. I searched the whole museum back then.“"
+         show bt sdhuh
          BT "“Sorry about that.“"
+         show bt grinning
          BT "“But we still ended up walking home together, didn't we?“"
          MC "“I guess we did.“"
+         show bt shy
          BT "“Anyway...umm can...I say something?“"
          MC "“What is it?“"
          BT "“Remember when I gave you a ring back then?“"
@@ -1656,23 +1677,35 @@ label start21:
          BT "“And since you didn’t contact me, I figured you forgot about me.“" 
          BT "“So I tried forgetting about you but I just couldn’t, and now that you’re back it feels...“"
          BT "“Everything I've been holding back just bursted out and now I can't stop saying stupid shit in front of you.“"
+         show bt bangry
          BT "“Fuck.“"
          BT "“Y’know what, feel free to forget about all this later but hear me out!“"
          BT "“I had a crush on you back then! And when I look at you now...I...I feel like the crush hasn’t stopped.“"
+         show bt bchill
          BT "“You’ve always been too nice to me.“"
          BT "“You pay attention to what I like and what I don't, you go along with all the stupid things I do even when you said it was stupid.“"
+         show bt shy
          BT "“You’re nice to talk to and I just...I...I...“"
          BT "“I still love you, [MC].“"
          BT "“Now I get it if you...“"
          MC "“Asher, shut the fuck up.“"
+         show bt betrayed
          BT "“What?“"
          MC "“Can I kiss you?“"
+         show bt bchill
          BT "“Yes pleas-“"
           
-         "Scene blackbg with fade"
+         scene grey with fade
          MC "(Without a moment to spare I pull him deep into a kiss, my right hand holding him by the waist and my left buried in his hair. He responds by flinging his arms over my shoulders and embracing me as we dive further into each other's warmth.)"
          MC "(Only once we ran out of breath do we finally pull apart.)"
-         "Scene garden with fade"
+
+         scene greenhouse with fade
+         show bt shy:
+            parallel:
+                ease .5 zoom 2.0
+            parallel:
+                yalign 0.0
+                linear 0.0 yalign 0.0 xalign 0.5
          BT "“[MC]...“"
          MC "“I still have the ring by the way.“"
          MC "“Look.“"
@@ -1694,7 +1727,7 @@ label start21:
          BT "“I’ve got nowhere to run, do I?“"
          MC "“Nope!“"
          BT "“Well it’s not like I wanted to anyway. I’ve loved you for more than half my life and it’s too late to stop now.“"
-         "Scene bg hitam"
+         scene grey with fade
          MC "(And with one last kiss, we sealed the deal on our relationship. From simple childhood friends our feelings have blossomed into a romance I'll never forget.)"
          MC "(I don’t quite know what the future has in store for us, but I'm sure if 10 years of separation isn’t enough to pull us apart then nothing will.)"
          "THE END : Asher's Route"

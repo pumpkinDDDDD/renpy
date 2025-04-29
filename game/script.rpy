@@ -1118,7 +1118,7 @@ label start18:
          OK "“Okay! Bye, [MC]!“"
          MC "“Bye!“"
 
-         "Scene insidedream with fade"
+         scene oldinside with fade
          MC "“There we go! You’re all cozy now.“"
          show k relaxed
          K "“Thank you, [MC]?“"

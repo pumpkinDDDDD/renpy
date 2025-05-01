@@ -1,15 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 951, in script
-    BT "“Whaddya say, [mc]?“"
-NameError: name 'mc' is not defined
+  File "game/script.rpy", line 31, in script
+    K "“[MC]! [MC]! There you are! What took you so long?“"
+NameError: name 'LN' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 951, in script
-    BT "“Whaddya say, [mc]?“"
+  File "game/script.rpy", line 31, in script
+    K "“[MC]! [MC]! There you are! What took you so long?“"
   File "D:\RENPY\renpy-8.3.4-sdk\renpy\ast.py", line 2579, in execute
     Say.execute(self)
   File "D:\RENPY\renpy-8.3.4-sdk\renpy\ast.py", line 621, in execute
@@ -24,6 +24,14 @@ Full traceback:
     return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
   File "D:\RENPY\renpy-8.3.4-sdk\renpy\substitutions.py", line 373, in substitute
     s = interpolate(s, variables) # type: ignore
+  File "D:\RENPY\renpy-8.3.4-sdk\renpy\substitutions.py", line 97, in interpolate
+    rv += format(value, fmt)
+  File "D:\RENPY\renpy-8.3.4-sdk\renpy\character.py", line 1304, in __format__
+    return format(str(self), spec)
+  File "D:\RENPY\renpy-8.3.4-sdk\renpy\character.py", line 1296, in __str__
+    rv = renpy.substitutions.substitute(who)[0]
+  File "D:\RENPY\renpy-8.3.4-sdk\renpy\substitutions.py", line 373, in substitute
+    s = interpolate(s, variables) # type: ignore
   File "D:\RENPY\renpy-8.3.4-sdk\renpy\substitutions.py", line 86, in interpolate
     raise e
   File "D:\RENPY\renpy-8.3.4-sdk\renpy\substitutions.py", line 78, in interpolate
@@ -33,9 +41,9 @@ Full traceback:
   File "D:\RENPY\renpy-8.3.4-sdk\renpy\python.py", line 1202, in py_eval_bytecode
     return eval(bytecode, globals, locals)
   File "<none>", line 1, in <module>
-NameError: name 'mc' is not defined
+NameError: name 'LN' is not defined
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.4.24120703
 Blossom 1.0
-Sun Apr 20 23:39:41 2025
+Thu May  1 23:31:07 2025

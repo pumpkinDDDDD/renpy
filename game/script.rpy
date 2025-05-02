@@ -1485,8 +1485,8 @@ label start21:
          NT "“Am I mistaken in my assumption?“"
          MC "“Not at all.“"
          scene grey with fade
-         MC "“With that, I draw him into a kiss as gentle as it is passionate. I find my hands grabbing him by the waist while his hands roam around my back.“"
-         MC "“In that slight moment, it feels like all time has stopped. It was only when we started running out of breath did we remember to breathe again.“"
+         "With that, I draw him into a kiss as gentle as it is passionate. I find my hands grabbing him by the waist while his hands roam around my back."
+         "In that slight moment, it feels like all time has stopped. It was only when we started running out of breath did we remember to breathe again."
          scene greenhouse with fade
          show nt brelaxed:
             parallel:
@@ -1499,7 +1499,7 @@ label start21:
          MC "“Here, I still have the ring.“"
          NT "“You kept it...“"
          MC "“I did.“"
-         "*cg sini(?)"
+         scene ntcg with fade
          NT "“Is it safe to assume-“"
          MC "“That we’re dating and I love you back? Yes.“"
          NT "“That’s...Pleasant to hear.“"
@@ -1736,8 +1736,8 @@ label start21:
          BT "“[MC]...“"
          MC "“I still have the ring by the way.“"
          MC "“Look.“"
-         "*cg disini"
-         MC "“As I pull out the cheap plastic ring out of my pockets, I can see his eyes shine with a mix of delight, surprise and maybe even the slightest threat of tears.“"
+         scene btcg with fade
+         "As I pull out the cheap plastic ring out of my pockets, I can see his eyes shine with a mix of delight, surprise and maybe even the slightest threat of tears."
          BT "“Does this mean...?“"
          MC "“It’s my turn to say it, I love you too.“"
          BT "“So are we-“"

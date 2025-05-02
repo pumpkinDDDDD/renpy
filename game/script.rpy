@@ -1211,7 +1211,7 @@ label start19:
      show nt normal at left
      show bt smile at right
      NT "“Good morning, [MC].“"
-     show nt neutral
+     show nt silent
      M "“You’re up pretty early, [MC]. I thought you would sleep in since it’s spring break.“"
      MC "“I guess I couldn't continue sleeping, I had a dream.“"
      show bt smirk

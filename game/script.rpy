@@ -90,7 +90,7 @@ label start:
     MC "“Uh huh! Thanks a lot!“"
     K "“Can I...put it on you?“"
     MC "“Sure!“"
-    scene oldgreenhouse
+    scene oldgreenhouse with fade
     MC "(I reach out my hand towards him and he gently holds it before slipping the plastic ring into my pointer finger. I’m not actually sure which one is the 'ring finger’ but maybe it is this one?)"
     MC "(Well, even if it isn’t, I’m happy to get a present anyway!)"
     show k relaxed
@@ -973,7 +973,7 @@ label start16:
      MC "(Now that I’ve had something in my stomach, I should probably start unpacking things.)"
      MC "(I really should've just shoved my stuff into a suitcase, i don't know why i decided to box them.)"
      MC "(Maybe I can start with that box over there?)"
-     scene box
+     scene box with fade 
      "*rustling through stuff sfx"
      "*Enter drag and drop"
      "*If nt_route≥2 "
@@ -1216,7 +1216,7 @@ label start19:
      MC "“I guess I couldn't continue sleeping, I had a dream.“"
      show bt smirk
      BT "“Is it of me?“"
-     show nt wink
+     show nt happy
      NT "“Must be a nightmare then.“"
      show bt sdangry
      BT "“Hey!“"

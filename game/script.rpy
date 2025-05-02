@@ -164,37 +164,46 @@ label start2:
     MD "“Coming!“"
     "door opening sfx"
     MC "(After a few hurried footsteps the door finally opened and out came a beautiful middle aged woman.)"
+    show md happy
     MD "“Oh! Lovely to see you two after so long. The [LN] family, yes? You used to live next door ten years ago? I believe you’ll be staying with us for spring break?“"
     M "“That’s right, good to see you haven’t changed much Diana. You seem well.“"
     MD "“Thank you, I've been as busy as ever lately.“"
+    show md joking
     MD "“It was calm for a while since the boys are in college. But now trouble’s back in town.“"
     M "“I know what you mean, the house is quieter without [MC] around.“"
     MC "“Says the one who asked to call everyday.“"
     M "“I’m just joking dear.“"
+    show md happy
     MD "“Anyway, why are we standing in the doorway? Come on in!“"
 
     scene inside with fade
+    show md happy
     MD "“Welcome inside! You can put your bags over there, I'll get the boys to move your suitcases into the guest room later.“"
     MD "“I’m sure you can’t wait to meet them [MC]. After all, you used to be so close with one of them!“"
     MD "“Although I will admit, I’m not sure which one it was.”"
     MD "“They were very hard to tell apart back then, and I was so busy I barely spent time with my boys.“"
     MC "(What?? Hard to tell apart? D-does this mean that there were-)"
     MC "“I’m sorry, hold up a sec. 'One of them'? 'Boys'? As in 'Plural'??“"
+    show md joking
     MD "“You didn’t know [MC]? My boys are twins.“"
     scene inside with vpunch
     MC "“WHAT???”"
     MC "“T-THEN, W-WHICH ONE DID I PLAY WITH??“"
     MC "“He never told me his name!”"
     M "“I must admit I'm also a little surprised, I thought you only had one kid.“"
+    show md angry
     MD "“{b}Those boys...{/b}, they did it again.“"
     MD "“See the thing is, they used to pretend to be one person in front of strangers all the time.“"
     MD "“They've always found it funny whenever other people are confused.“"
     MD "“Which is precisely why at the very least, i had to make sure they were in seperate classes.“"
     MD "“Inside the house however, they would pretend to be each other. Telling them apart was impossible back then.“"
     MC "“What about now?“"
+    show md joking
     MD "“Now? They’ve grown into their personal preferences so it is much easier to tell them apart.“"
+    show md angry
     MD "“It doesn’t stop them from occasionally pretending to be each other though...“" 
     MD "“They especially love to mess with the barber.“"
+    hide md
     show bt normal
     BJ "“Mom? Do we have company?“"
     MC "(!!)"
@@ -260,18 +269,22 @@ label start2:
     show nt grin
     show bt smile
     MD "“Oh come on.“"
+    show md angry
     MC "(Ms. Diascia looks towards me and leans closer, whispering in my ear.)"
     MD "{size=-10}“I know my boys well enough to know when they’re telling the truth, this is one of those moments.“{/size}"
     MD "{size=-10}“It really was only of of them.“{/size}"
     MC "{size=-10}“Thanks Ms. Diascia“{/size}"
+    show md smile
     MC "(Still though, the question remains. Which twin was it?)"
 
     MC "(Noticing my current state of confusion, Ms. Diascia opens her mouth.)"
+    show md happy
     MD "“Oh I almost forgot, boys why don’t you help carry the [LN] family’s belongings into our guest room?“"
     MD "“I’m sure they could use the help.“"
-    show bt chill
+    hide md
+    show bt chill at right
     BT "“Sure.“"
-    show nt normal
+    show nt normal at left
     NT "“Fine.“"
 
     scene guestroomday with fade
@@ -558,7 +571,8 @@ label start10:
              MC "“That corner sure looks cozy.“"
              show nt happy
              NT "“I’m glad you agree, that’s my regular seat.“"
-             show nt silent
+             show nt silent at left
+             show b normal at right
              W "“Ash- wait no. Sorry, wrong twin. Hard to tell from behind.“"
              W "“Florian, you back in town?“"
              show nt normal
@@ -570,7 +584,8 @@ label start10:
                  show nt normal
                  NT "“Not at all, [MC]’s a friend.“"
                  W "“Sorry man, I thought you two seemed close.“"
-                 show nt grinning
+                 hide b
+                 show nt grinning at center
                  NT "“I suppose we are, aren’t we, [MC]?“"
                  MC "“I don’t know about that chief, I learned your name an hour ago.“"
                  show nt happy
@@ -588,7 +603,8 @@ label start10:
              show nt normal
              NT "“I’ll save a seat for us.“"
              hide nt
-             show bt smile at center
+             show b normal at left
+             show bt smile at right
              B "“Heyy Asher, haven’t seen you in a while.“"
              show bt smirk
              BT "“Obviously, I moved out for college remember?“"
@@ -609,6 +625,7 @@ label start10:
                  B "“All right enough you two, here’s your drink.“"
                  show bt chill
                  BT "“Thanks man.“"
+                 hide b
                  jump start11
 
 label start11: 
@@ -924,15 +941,19 @@ label start15:
      MC "We're back!"
      MC "(Once we entered the home, I can see that Ms. Diascia and Mom have set the table ready for dinner. The smell of the hot soup warms my heart and stomach. I feel like I’m about to start drooling.)"
      MC "“Things like this really hammer it home that I'm back, like for real.”"
+     show md happy
      MD "“Just in time you two, grab a seat we’re ready for dinner.“"
+    show md smile
      MC "“Oh great!“"
      M "“[MC], I made your favorite.“"
      MC "“Thanks, Mom.“"
      MC "(Man, it sure smells great)"
+    show md happy
      MD "“Come sit down [MC], we've set the table for all of you already.“"
      MC "“Thankyou Ms. Diascia.“"
      MC "(I proceeded to pull out a chair right next to my mother with Ms. Diascia and those two sitting opposite from us.)"
      MD "“So where did the three of you go?“"
+     hide md
      show nt silent at left
      show bt happy at right
      BT "“We took her to the best cafe in town obviously.“"
@@ -963,6 +984,7 @@ label start16:
      M "“Now now, let’s continue our dinner in peace. Shall we?“"
      MD "“Yes we shall.“"
      show bt normal
+     show nt silent
      BT "“Right, sorry Ms. [LN].“"
 
      scene guestroomnight1 with fade
@@ -1051,6 +1073,7 @@ label start17:
      MC "(Quickly I shove it back under the bed and hid it as best as I can. Hopefully she won’t notice that I’ve been snooping through his old belongings.)"
      MC "“I am Ms. Diascia! Wait a sec!“"
      "door opening sfx"
+     show md happy
      MD "“[MC], I forgot to tell you something.“"
      MC "“What is it?“"
      MD "“I forgot to completely clear out the room before you got here, so if there are some extra boxes they’re probably the twins' old things.“"
@@ -1062,6 +1085,7 @@ label start17:
      MC "“Sure thing.“"
      MC "“Goodnight Ms. Diascia.“"
      MD "“Goodnight [MC].“"
+     hide md
      "*door close sfx"
      MC "(Yikes, that was close.)"
      MC "(And worse of all, all that snooping made me forget that I was supposed to unpack my all my stuff.)"
@@ -1149,7 +1173,7 @@ label start18:
          K "“Oh okay, I'll go to Jacob’s house then. Have fun but remember to play with me later!!“"
          MC "“Okay! Byee!!“"
          K "“See you later, [MC]!!“"
-         scene insidedream with fade
+         scene oldinside with fade
          MC "“Heyy!! I’m here now!!“"
          MC "“...”"
          MC "(He’s not answering.)"
@@ -1245,8 +1269,12 @@ label start19:
 label start20:
      show nt silent
      show bt smile
+     hide bt
+     hide nt
+     show md joking
      MD "“Boys, please have your breakfast in peace.“"
      MD "“I’m sure [MC] will get a headache if you keep bantering this early.“"
+     show md happy
      MD "“Anything you’d like, [MC]?“"
      
      menu: 

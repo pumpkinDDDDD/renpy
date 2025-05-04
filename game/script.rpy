@@ -14,8 +14,28 @@ define BV = Character ("Boy with vest")
 define BJ = Character ("Boy with jacket")    
 define Bo = Character ("Asher and Florian")
 define ST = Character ("Stranger")
+ 
 
 label start:
+     "Choose your pronoun."
+     menu:
+             "She":
+                 $ player_gender = "she"
+                 $ player_possessive = "her"
+                 $ player_object = "her"
+                 $ player_pronoun = "girlfriend"
+             "He":
+                 $ player_gender = "he"
+                 $ player_possessive = "his"
+                 $ player_object = "him"
+                 $ player_pronoun = "boyfriend"
+             "They":
+                 $ player_gender = "they"
+                 $ player_possessive = "their"
+                 $ player_object = "them"
+                 $ player_pronoun = "partner"
+     
+label start1:
 
     $ NT_route = 0
     $ BT_route = 0
@@ -23,10 +43,9 @@ label start:
     $ MC = renpy.input("What is Your Name?")
 
     $ LN = renpy.input("What is your last name?")
-
-    M "bombardilo crocodilo"
-
+    
     scene oldoutside with fade
+    play music "audio/flashback.mp3"
     show k happy
 
     K "“[MC]! [MC]! There you are! What took you so long?“"
@@ -112,6 +131,7 @@ label start:
     K "“[MC] you liar!“"
 
     scene car with vpunch
+    play music "audio/Normal.mp3"
     MC "(What was that..?)"
     MC "(That felt oddly familiar...)"
     M "“What’s wrong dear?“"
@@ -160,9 +180,10 @@ label start2:
     scene outsideday with fade
     M "“Ready to go in?“"
     MC "“As ready as I’ll ever be.“"
-    "sfx"
+    play music "audio/knock.mp3" fadein 1.0 channel 2
     MD "“Coming!“"
-    "door opening sfx"
+    play music "audio/door.mp3"
+    play music "audio/Normal.mp3" loop
     MC "(After a few hurried footsteps the door finally opened and out came a beautiful middle aged woman.)"
     show md happy
     MD "“Oh! Lovely to see you two after so long. The [LN] family, yes? You used to live next door ten years ago? I believe you’ll be staying with us for spring break?“"
@@ -497,7 +518,7 @@ label start8:
      MC "“If you two don’t mind me asking, which college did you go to?“"
      show bt normal
      show nt normal
-     Bo "“ Begonia’s Institute of Technology.“"
+     Bo "“Begonia’s Institute of Technology.“"
      MC "(!!!)"
      MC "“No WAY!“"
      MC "“I go there too!“"
@@ -549,6 +570,7 @@ label start10:
 
 
      scene cafeday
+     play music "audio/cafe.mp3"
      show bt grinning
      BT "“Here we are! Best cafe in town as far as I’m concerned.“"
      show bt smile at right
@@ -577,14 +599,16 @@ label start10:
              W "“Florian, you back in town?“"
              show nt normal
              NT "“Yes, I'll be staying here for spring break.“"
-             W "“Nice, is that your partner?“"
+             W "“Nice, is that your [player_pronoun]?“"
              if NT_route >= 1:
                  show nt embarassed
+                 hide b normal
+                 jump start11
              else:
                  show nt normal
                  NT "“Not at all, [MC]’s a friend.“"
                  W "“Sorry man, I thought you two seemed close.“"
-                 hide b
+                 hide b normal
                  show nt grinning at center
                  NT "“I suppose we are, aren’t we, [MC]?“"
                  MC "“I don’t know about that chief, I learned your name an hour ago.“"
@@ -608,9 +632,11 @@ label start10:
              B "“Heyy Asher, haven’t seen you in a while.“"
              show bt smirk
              BT "“Obviously, I moved out for college remember?“"
-             B "“That your partner?“"
+             B "“That your [player_pronoun]?“"
              if BT_route >= 1:
                  show bt bangry
+                 hide b normal
+                 jump start11
              else:
                  show bt normal
                  BT "“No stupid, [MC]’s a friend.“"
@@ -625,11 +651,13 @@ label start10:
                  B "“All right enough you two, here’s your drink.“"
                  show bt chill
                  BT "“Thanks man.“"
-                 hide b
+                 hide b normal
                  jump start11
 
 label start11: 
-     "walking sfx"
+     play music "audio/footstep.mp3" 
+     stop music 
+     play music "audio/cafe.mp3"
      show bt normal at right
      BT "“We’re not sitting down?“"
      show nt normal at left
@@ -710,7 +738,9 @@ label start11:
              jump start12
 
 label start12:
-     "Phone notif sfx"
+     play music "audio/notif.mp3"
+     stop music fadeout 0.5
+     play music "audio/cafe.mp3" loop
      if BT_route >= 1:
          show nt questioning
          NT "“Oh? That’s unfortunate.“"
@@ -918,6 +948,7 @@ label start12:
 
 label start15:
      scene outsideevening with fade
+     play music "audio/Normal.mp3" loop
      MC "“(That sure was fun.)"
      MC "(Who knew talking to an old friend or meeting a new one would be so fun?)"
      MC "(Although, the more I talk to him the more confident I am that he was the one I played with.)"
@@ -943,12 +974,12 @@ label start15:
      MC "“Things like this really hammer it home that I'm back, like for real.”"
      show md happy
      MD "“Just in time you two, grab a seat we’re ready for dinner.“"
-    show md smile
+     show md smile
      MC "“Oh great!“"
      M "“[MC], I made your favorite.“"
      MC "“Thanks, Mom.“"
      MC "(Man, it sure smells great)"
-    show md happy
+     show md happy
      MD "“Come sit down [MC], we've set the table for all of you already.“"
      MC "“Thankyou Ms. Diascia.“"
      MC "(I proceeded to pull out a chair right next to my mother with Ms. Diascia and those two sitting opposite from us.)"
@@ -993,28 +1024,93 @@ label start16:
      MC "(Kinda nice, actually.)"
      MC "(I feel like college has ruined my eating habits a little.)"
      MC "(Now that I’ve had something in my stomach, I should probably start unpacking things.)"
-     MC "(I really should've just shoved my stuff into a suitcase, i don't know why i decided to box them.)"
+     MC "(I really should've just shoved my stuff into a suitcase, I don't know why I decided to box them.)"
      MC "(Maybe I can start with that box over there?)"
      scene box with fade 
-     "*rustling through stuff sfx"
-     "*Enter drag and drop"
-     "*If nt_route≥2 "
-     "the items are an old bottle of ink, stacks of old notes, an old photo, hardcover book, journal is a standard notebook"
-     "Else"
-     "Items are old anatomy sketches, half of a scarf, old photo, jar of beads, journal is a sketchbook."
-     "*bg is the box, makes sure all the other items cover the journal, plot only moves forward once you click on the journal, you can read the journal but in case people can’t read the writing make sure it’s also on the text box later."
-
-     MC "(Wait a minute. This isn’t my stuff.)"
-     MC "(Did I open the wrong box?)"
-
-     if BT_route >= 1:
-         MC "(Honestly, this looks more like something Asher would have.)"
-         jump afterbox
+     if NT_route >= 1:
+         "botak aq stres"
+         jump Florian
      else:
-         MC "(Honestly, this looks more like something Florian would have.)"
-         jump afterbox
+         "gais ak gila"
+         jump Asher
+
+
+label Florian:
+     scene expression Image("images/box2.png")
+     show screen drag_objects_2
+     screen drag_objects_2():
+             draggroup:
+                 drag:
+                     child "images/ntjournal.png"
+                     draggable False
+                     xpos 650
+                     ypos 60
+                     clicked [Hide("drag_objects_2"), Jump("afterbox")]
+
+                 drag:
+                     child "images/Hardcover.png"
+                     draggable True
+                     xpos 500 ypos 160
+
+                 drag:
+                     child "images/photo.png"
+                     draggable True
+                     xpos 700 ypos 200
+ 
+                 drag:
+                     child "images/Notes.png"
+                     draggable True
+                     xpos 800 ypos 240
+        
+                 drag:
+                     child "images/ink.png"
+                     draggable True
+                     xpos 550 ypos 120  
+label Asher:
+         scene expression Image("images/box.png")
+         show screen drag_objects_1
+         screen drag_objects_1():
+            draggroup:
+                drag:
+                    child "images/btjournal.png"
+                    draggable False
+                    xpos 650
+                    ypos 60
+                    clicked [Hide("drag_objects_1"), Jump("afterbox")]
+    
+                drag:
+                    child "images/Sketch.png"
+                    draggable True
+                    xpos 500 ypos 160
+    
+                drag:
+                    child "images/photo.png"
+                    draggable True
+                    xpos 700 ypos 200
+    
+                drag:
+                    child "images/Scarf.png"
+                    draggable True
+                    xpos 800 ypos 240
+    
+                drag:
+                    child "images/beads.png"
+                    draggable True
+                    xpos 550 ypos 120
+
+                
 
 label afterbox:
+     MC "(Wait a minute. This isn’t my stuff.)"
+     MC "(Did I open the wrong box?)"
+     if BT_route >= 1:
+         MC "(Honestly, this looks more like something Asher would have.)"
+         jump startdiary
+     else:
+         MC "(Honestly, this looks more like something Florian would have.)"
+         jump startdiary
+
+label startdiary:
      MC "(...)"
      MC "(I've got an idea.)"
      MC "(Potentially a horrible trust ruining idea but I think I need the help.)"
@@ -1119,6 +1215,7 @@ label start17:
 
 label start18:
      scene oldoutside with fade
+     play music "audio/flashback.mp3" loop
      if NT_route >= 1:
          show k worried
          K "“[MC]? Where are you going?“"
@@ -1215,12 +1312,14 @@ label start18:
          jump start19
 
 label start19:
+     stop music fadeout 1.0
      scene guestroomday with fade
      scene grey with fade
      scene guestroomday with fade
      scene grey with fade
      scene guestroomday with fade
      scene grey with fade
+     play music "audio/Normal.mp3"
      MC "(What...was that?)"
      MC "(Huh.)"
      MC "(I guess being back at Gardenville brings back more memories than I thought.)"
@@ -1392,7 +1491,8 @@ label start21:
          BT "“See y'all!“"
          "*door closed sfx"
          hide bt
-         show nt silent at center
+         show nt silent at center:
+             ease .5 zoom 2.0 yalign 0.0
          MC "(I’m glad he caught on so quickly, now it’s just me and him in the house.)"
          MC "“So would you like to lay down?“"
          show nt sick
@@ -1442,6 +1542,7 @@ label start21:
          MC "(He takes me through several bushes and an overgrown path which eventually lead to a pipe big enough for a human to crawl through and after squeezing through a brick wall, we made it.)"
 
          scene greenhouse with fade
+         play music "audio/Confession.mp3" loop
          MC "(So it was here.)"
          MC "(It hasn’t been any last magnificent as I’ve last seen it in my memories.)"
          MC "“So, where are we?“"
@@ -1499,7 +1600,7 @@ label start21:
          MC "“Here, I still have the ring.“"
          NT "“You kept it...“"
          MC "“I did.“"
-         scene ntcg with fade
+         scene cgnt with fade
          NT "“Is it safe to assume-“"
          MC "“That we’re dating and I love you back? Yes.“"
          NT "“That’s...Pleasant to hear.“"
@@ -1671,6 +1772,7 @@ label start21:
          MC "(He takes me through several bushes and an overgrown path which eventually lead to a pipe big enough for a human to crawl through and after squeezing through a brick wall, we made it.)"
 
          scene greenhouse with fade
+         play music "audio/Confession.mp3" loop
          MC "(So it was here.)"
          MC "(It hasn’t been any less magnificent as I’ve last seen it in my memories.)"
          MC "“So, where are we?“"
@@ -1736,7 +1838,7 @@ label start21:
          BT "“[MC]...“"
          MC "“I still have the ring by the way.“"
          MC "“Look.“"
-         scene btcg with fade
+         scene cgbt with fade
          "As I pull out the cheap plastic ring out of my pockets, I can see his eyes shine with a mix of delight, surprise and maybe even the slightest threat of tears."
          BT "“Does this mean...?“"
          MC "“It’s my turn to say it, I love you too.“"
@@ -1758,7 +1860,7 @@ label start21:
          MC "(And with one last kiss, we sealed the deal on our relationship. From simple childhood friends our feelings have blossomed into a romance I'll never forget.)"
          MC "(I don’t quite know what the future has in store for us, but I'm sure if 10 years of separation isn’t enough to pull us apart then nothing will.)"
          "THE END : Asher's Route"
-
+ 
 # bang, endingnya kalau bisa kita coba ada transisi fade biar ga lgsg abrupt kaya si gr
 
 

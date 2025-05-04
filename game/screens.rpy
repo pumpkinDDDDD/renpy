@@ -135,7 +135,7 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Image("images/textbox.png", xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
@@ -184,6 +184,7 @@ screen input(prompt):
 
             text prompt style "input_prompt"
             input id "input"
+
 
 style input_prompt is default
 
@@ -384,7 +385,7 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    background "images/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0

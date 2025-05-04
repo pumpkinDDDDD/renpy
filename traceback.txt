@@ -1,49 +1,56 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 31, in script
-    K "“[MC]! [MC]! There you are! What took you so long?“"
-NameError: name 'LN' is not defined
+After initialization, but before game start.
+  File "game/script.rpy", line 1038, in prepare_screen
+    screen drag_objects_1():
+  File "game/script.rpy", line 1038, in prepare
+    screen drag_objects_1():
+  File "game/script.rpy", line 1039, in prepare
+    draggroup:
+  File "game/script.rpy", line 1039, in prepare
+    draggroup:
+  File "game/script.rpy", line 1040, in prepare
+    drag:
+  File "game/script.rpy", line 1040, in prepare
+    drag:
+SyntaxError: invalid syntax (game/script.rpy, line 1045)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 31, in script
-    K "“[MC]! [MC]! There you are! What took you so long?“"
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\ast.py", line 2579, in execute
-    Say.execute(self)
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\ast.py", line 621, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\character.py", line 1440, in __call__
-    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\character.py", line 1354, in prefix_suffix
-    return (sub(prefix) + sub(body) + sub(suffix))
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\character.py", line 1334, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\substitutions.py", line 97, in interpolate
-    rv += format(value, fmt)
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\character.py", line 1304, in __format__
-    return format(str(self), spec)
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\character.py", line 1296, in __str__
-    rv = renpy.substitutions.substitute(who)[0]
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\substitutions.py", line 86, in interpolate
+  File "D:\RENPY\renpy-8.3.4-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "D:\RENPY\renpy-8.3.4-sdk\renpy\main.py", line 652, in main
+    run(restart)
+  File "D:\RENPY\renpy-8.3.4-sdk\renpy\main.py", line 94, in run
+    renpy.display.screen.prepare_screens()
+  File "D:\RENPY\renpy-8.3.4-sdk\renpy\display\screen.py", line 1024, in prepare_screens
+    s.ast.prepare_screen()
+  File "game/script.rpy", line 1038, in prepare_screen
+    screen drag_objects_1():
+  File "game/script.rpy", line 1038, in prepare
+    screen drag_objects_1():
+  File "game/script.rpy", line 1039, in prepare
+    draggroup:
+  File "game/script.rpy", line 1039, in prepare
+    draggroup:
+  File "game/script.rpy", line 1040, in prepare
+    drag:
+  File "game/script.rpy", line 1040, in prepare
+    drag:
+  File "D:\RENPY\renpy-8.3.4-sdk\renpy\py3analysis.py", line 803, in ast_eval
+    return self.ast_eval_literal(expr)[0]
+  File "D:\RENPY\renpy-8.3.4-sdk\renpy\py3analysis.py", line 785, in ast_eval_literal
+    expr = py_compile(expr, 'eval', ast_node=True)
+  File "D:\RENPY\renpy-8.3.4-sdk\renpy\python.py", line 1144, in py_compile
     raise e
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\python.py", line 1209, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\python.py", line 1202, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "<none>", line 1, in <module>
-NameError: name 'LN' is not defined
+  File "D:\RENPY\renpy-8.3.4-sdk\renpy\python.py", line 1081, in py_compile
+    raise orig_e
+  File "D:\RENPY\renpy-8.3.4-sdk\renpy\python.py", line 1073, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (game/script.rpy, line 1045)
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.4.24120703
 Blossom 1.0
-Thu May  1 23:31:07 2025
+Sun May  4 21:42:53 2025

@@ -1066,6 +1066,8 @@ label Florian:
                      child "images/ink.png"
                      draggable True
                      xpos 550 ypos 120  
+   jump afterbox
+
 label Asher:
          scene expression Image("images/box.png")
          show screen drag_objects_1

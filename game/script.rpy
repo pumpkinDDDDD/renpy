@@ -640,7 +640,18 @@ label start10:
              B "“That your [player_pronoun]?“"
              if BT_route >= 1:
                  show bt bangry
-                 show bt bangry
+                 BT "“No stupid, [MC]’s a friend.“"
+                 B "“My bad, you two seem pretty close.“"
+                 show bt wink
+                 BT "“Damn right, we are.“"
+                 MC "“I wouldn’t say that, we’ve only seen each other again like an hour ago.“"
+                 show bt smirk
+                 BT "“Didn’t we used to play together?“"
+                 show bt happy
+                 BT "“You wound me, [MC].“"
+                 B "“All right enough you two, here’s your drink.“"
+                 show bt chill
+                 BT "“Thanks man.“"
                  hide b normal
                  jump start11
              else:
@@ -1321,12 +1332,7 @@ label start18:
 
 label start19:
      stop music fadeout 1.0
-     scene guestroomday with fade
-     scene grey with fade
-     scene guestroomday with fade
-     scene grey with fade
-     scene guestroomday with fade
-     scene grey with fade
+     scene guestroomday with vpunch
      play music "audio/Normal.mp3"
      MC "(What...was that?)"
      MC "(Huh.)"

@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 605: expected statement.
-    renpy.pause(0.5)
+File "game/script.rpy", line 644: expected statement.
+    renpy.pause(1.0)
                     ^
-
-File "game/script.rpy", line 639: expected statement.
-    renpy.pause(0.5)
-                    ^
-
-File "game/script.rpy", line 661: expected end of line
-    stop music "audio/footstep.mp3"
-               ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Sun May  4 22:01:01 2025
+Mon May  5 00:15:16 2025

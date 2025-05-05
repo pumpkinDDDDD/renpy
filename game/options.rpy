@@ -49,6 +49,7 @@ define build.name = "Blossom"
 define config.has_sound = True
 define config.has_music = True
 define config.has_voice = True
+define config.main_menu_music = "audio/Normal.mp3"
 
 
 ## To allow the user to play a test sound on the sound or voice channel,

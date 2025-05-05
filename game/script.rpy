@@ -47,7 +47,6 @@ label start1:
     scene oldoutside with fade
     play music "audio/flashback.mp3"
     show k happy
-
     K "“[MC]! [MC]! There you are! What took you so long?“"
     MC "“Sorry... I was talking to my mom.“"
 
@@ -60,12 +59,18 @@ label start1:
     MC "“Sure?“"
 
     scene grey with fade
+    play sound "audio/walkdirt.mp3"
+    play sound "audio/walkdirt.mp3"
     MC "“Are we there yet?“"
     K "“Nope!“"
+    play sound "audio/walkdirt.mp3" 
+    play sound "audio/walkdirt.mp3"
     MC "“...“"
     MC "“Are we almost there now?“"
     K "“Nope! A little more I promise.“"
     MC "“Okay?“"
+    play sound "audio/walkdirt.mp3" 
+    play sound "audio/walkdirt.mp3"
     K "“Okay, now duck and crawl here.“"
     MC "“This seems suspicious, are you sure we’re going somewhere safe?“"
     K "“I’m very sure.“"
@@ -180,9 +185,9 @@ label start2:
     scene outsideday with fade
     M "“Ready to go in?“"
     MC "“As ready as I’ll ever be.“"
-    play music "audio/knock.mp3" fadein 1.0 channel 2
+    play sound "audio/knock.mp3" 
     MD "“Coming!“"
-    play music "audio/door.mp3"
+    play sound "audio/door.mp3"
     play music "audio/Normal.mp3" loop
     MC "(After a few hurried footsteps the door finally opened and out came a beautiful middle aged woman.)"
     show md happy
@@ -216,7 +221,7 @@ label start2:
     MD "“{b}Those boys...{/b}, they did it again.“"
     MD "“See the thing is, they used to pretend to be one person in front of strangers all the time.“"
     MD "“They've always found it funny whenever other people are confused.“"
-    MD "“Which is precisely why at the very least, i had to make sure they were in seperate classes.“"
+    MD "“Which is precisely why at the very least, I had to make sure they were in seperate classes.“"
     MD "“Inside the house however, they would pretend to be each other. Telling them apart was impossible back then.“"
     MC "“What about now?“"
     show md joking
@@ -240,7 +245,7 @@ label start2:
     BV "“Is that...[MC]?“"
     show bt chill
     BJ "“The one that used to live next door?“"
-    MD "“Yes it is, now be polite and introduce yourselves. [MC] and her mother will be staying with us throughout spring break.“"
+    MD "“Yes it is, now be polite and introduce yourselves. [MC] and [player_possessive] mother will be staying with us throughout spring break.“"
     show nt normal
     BV "“Seriously?“"
     show bt grinning
@@ -635,6 +640,7 @@ label start10:
              B "“That your [player_pronoun]?“"
              if BT_route >= 1:
                  show bt bangry
+                 show bt bangry
                  hide b normal
                  jump start11
              else:
@@ -1028,10 +1034,8 @@ label start16:
      MC "(Maybe I can start with that box over there?)"
      scene box with fade 
      if NT_route >= 1:
-         "botak aq stres"
          jump Florian
      else:
-         "gais ak gila"
          jump Asher
 
 
@@ -1066,6 +1070,7 @@ label Florian:
                      child "images/ink.png"
                      draggable True
                      xpos 550 ypos 120  
+     jump afterbox               
 label Asher:
          scene expression Image("images/box.png")
          show screen drag_objects_1
@@ -1097,8 +1102,6 @@ label Asher:
                     child "images/beads.png"
                     draggable True
                     xpos 550 ypos 120
-
-                
 
 label afterbox:
      MC "(Wait a minute. This isn’t my stuff.)"
@@ -1168,7 +1171,7 @@ label start17:
      scene guestroomnight1
      MC "(Quickly I shove it back under the bed and hid it as best as I can. Hopefully she won’t notice that I’ve been snooping through his old belongings.)"
      MC "“I am Ms. Diascia! Wait a sec!“"
-     "door opening sfx"
+     play sound "audio/door.mp3"
      show md happy
      MD "“[MC], I forgot to tell you something.“"
      MC "“What is it?“"
@@ -1182,7 +1185,7 @@ label start17:
      MC "“Goodnight Ms. Diascia.“"
      MD "“Goodnight [MC].“"
      hide md
-     "*door close sfx"
+     play sound "audio/door.mp3"
      MC "(Yikes, that was close.)"
      MC "(And worse of all, all that snooping made me forget that I was supposed to unpack my all my stuff.)"
      MC "(Guess I gotta get on with it.)"
@@ -1489,7 +1492,7 @@ label start21:
          BT "“I’ll just...go around town and leave you two all alone.“"
          show bt wink
          BT "“See y'all!“"
-         "*door closed sfx"
+         play sound "audio/door.mp3"
          hide bt
          show nt silent at center:
              ease .5 zoom 2.0 yalign 0.0

@@ -169,7 +169,7 @@ label start1:
     MC "“The ones who live next door and have pink hair? Has a son my age??“"
     M "“The one and only. I figured staying with them for spring break might cheer you up, no?"
     MC "“Really mom? .“"
-    M "Speaking of which, we’re here!“"
+    M "“Speaking of which, we’re here!“"
     
     menu:
          "Goodie.":
@@ -607,7 +607,14 @@ label start10:
              W "“Nice, is that your [player_pronoun]?“"
              if NT_route >= 1:
                  show nt embarassed
+                 NT "“Not at all, [MC]’s a friend.“"
+                 W "“Sorry man, I thought you two seemed close.“"
                  hide b normal
+                 show nt grinning at center
+                 NT "“I suppose we are, aren’t we, [MC]?“"
+                 MC "“I don’t know about that chief, I learned your name an hour ago.“"
+                 show nt happy
+                 NT "“You have me there.“"
                  jump start11
              else:
                  show nt normal
@@ -672,7 +679,7 @@ label start10:
                  jump start11
 
 label start11: 
-     play music "audio/footstep.mp3" 
+     play sound "audio/footstep.mp3" 
      stop music 
      play music "audio/cafe.mp3"
      show bt normal at right
@@ -755,7 +762,7 @@ label start11:
              jump start12
 
 label start12:
-     play music "audio/notif.mp3"
+     play sound "audio/notif.mp3"
      stop music fadeout 0.5
      play music "audio/cafe.mp3" loop
      if BT_route >= 1:
@@ -1193,7 +1200,7 @@ label start17:
      MC "“What is it?“"
      MD "“I forgot to completely clear out the room before you got here, so if there are some extra boxes they’re probably the twins' old things.“"
      MD "“After all, this used to be their shared bedroom.“"
-     MC "(Too late for that, I already went as far as reading their childhood journal.)"
+     MC "(Too late for that, I already went as far as reading his childhood journal.)"
      MC "“Oh okay, thanks for telling me.“"
      MD "“Sure thing, have a good night, [MC]. I hope you’ll enjoy your stay here.“"
      MC "“If you need anything, just call okay?.“"

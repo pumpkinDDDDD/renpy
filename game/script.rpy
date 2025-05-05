@@ -1070,7 +1070,12 @@ label Florian:
                      child "images/ink.png"
                      draggable True
                      xpos 550 ypos 120  
+<<<<<<< HEAD
      jump afterbox               
+=======
+   jump afterbox
+
+>>>>>>> 0ec15631e387f984caca8cf5400985a6da7b5b2e
 label Asher:
          scene expression Image("images/box.png")
          show screen drag_objects_1

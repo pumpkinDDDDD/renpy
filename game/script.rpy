@@ -170,6 +170,8 @@ label start1:
     M "“The one and only. I figured staying with them for spring break might cheer you up, no?"
     MC "“Really mom? “"
     M "”Speaking of which, we’re here!“"
+    MC "“Really mom? .“"
+    M "“Speaking of which, we’re here!“"
     
     menu:
          "Goodie.":
@@ -681,6 +683,8 @@ label start10:
 label start11: 
      queue sound "audio/footstep.mp3" 
      queue sound "audio/footstep.mp3"
+     play sound "audio/footstep.mp3" 
+     stop music 
      play music "audio/cafe.mp3"
      show bt normal at right
      BT "“We’re not sitting down?“"
@@ -762,7 +766,7 @@ label start11:
              jump start12
 
 label start12:
-     play music "audio/notif.mp3"
+     play sound "audio/notif.mp3"
      stop music fadeout 0.5
      play music "audio/cafe.mp3" loop
      if BT_route >= 2:
@@ -1201,7 +1205,7 @@ label start17:
      MC "“What is it?“"
      MD "“I forgot to completely clear out the room before you got here, so if there are some extra boxes they’re probably the twins' old things.“"
      MD "“After all, this used to be their shared bedroom.“"
-     MC "(Too late for that, I already went as far as reading their childhood journal.)"
+     MC "(Too late for that, I already went as far as reading his childhood journal.)"
      MC "“Oh okay, thanks for telling me.“"
      MD "“Sure thing, have a good night, [MC]. I hope you’ll enjoy your stay here.“"
      MC "“If you need anything, just call okay?.“"

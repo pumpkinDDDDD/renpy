@@ -1,4 +1,5 @@
 ﻿#tes ini berubah ga dhiii YESSSSS BERUBAHHH
+#update 15/5/2025
 
 define K = Character ("Kid")    
 define NT = Character ("Florian")

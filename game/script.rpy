@@ -167,7 +167,7 @@ label start1:
     MC "“Just to make sure, we’re talking about the Diascias right?“"
     M "“Yep, I’ve been in contact with Ms. Diascia and she has kindly agreed to let us stay.“"
     MC "“The ones who live next door and have pink hair? Has a son my age??“"
-    M "“The one and only. I figured staying with them for spring break might cheer you up, no?"
+    M "“The one and only. I figured staying with them for spring break might cheer you up, no?“"
     MC "“Really mom? “"
     M "”Speaking of which, we’re here!“"
     MC "“Really mom? .“"
@@ -223,7 +223,7 @@ label start2:
     MD "“{b}Those boys...{/b}, they did it again.“"
     MD "“See the thing is, they used to pretend to be one person in front of strangers all the time.“"
     MD "“They've always found it funny whenever other people are confused.“"
-    MD "“Which is precisely why at the very least, I had to make sure they were in seperate classes.“"
+    MD "“Which is precisely why at the very least, I had to make sure they were in separate classes.“"
     MD "“Inside the house however, they would pretend to be each other. Telling them apart was impossible back then.“"
     MC "“What about now?“"
     show md joking
@@ -284,7 +284,7 @@ label start2:
     NT "“Definitely.“"
     MD "“Come on, don’t you feel bad for [MC] here?“"
     show bt normal
-    BT "“Surely [MC] can recognize which one of us it was, no? Especially since we were insperable back then?“"
+    BT "“Surely [MC] can recognize which one of us it was, no? Especially since we were inseperable back then?“"
     show nt normal
     NT "“For your information, it really was only one of us.“"
     show bt smirk
@@ -300,7 +300,7 @@ label start2:
     show md angry
     MC "(Ms. Diascia looks towards me and leans closer, whispering in my ear.)"
     MD "{size=-10}“I know my boys well enough to know when they’re telling the truth, this is one of those moments.“{/size}"
-    MD "{size=-10}“It really was only of of them.“{/size}"
+    MD "{size=-10}“It really was only one of of them.“{/size}"
     MC "{size=-10}“Thanks Ms. Diascia“{/size}"
     show md smile
     MC "(Still though, the question remains. Which twin was it?)"
@@ -433,7 +433,7 @@ label start5:
              $ BT_route +=1
              scene guestroomday with fade
              MC "(Now that I think about it, it was shoddily made but I like it anyway.)"
-             MC"“(It has its own special place on my desk.)"
+             MC"(It has its own special place on my desk.)"
              scene oldoutside with fade
              show k relaxed
              K "“[MC] before you leave, I'd like you to have this.“"
@@ -914,10 +914,10 @@ label start12:
                  MC "“I still read it from time to time y’know? Your words will forever be immortalized in my head.“"
                  MC "(Especially because it was something from someone I had a crush on.)"
                  show nt questioning
-                 NT "Did you really...?“"
+                 NT "“Did you really...?“"
                  show nt brelaxed
                  NT "“That’s.. rather embarrassing to hear.“"
-                 MC "“It’s not embarrassing at all, i treasured the letter.“"
+                 MC "“It’s not embarrassing at all, I treasured the letter.“"
                  show nt relaxed
                  NT "“Thank you, [MC]...“"
                  jump start14
@@ -979,14 +979,14 @@ label start12:
 label start15:
      scene outsideevening with fade
      play music "audio/Normal.mp3" loop
-     MC "“(That sure was fun.)"
+     MC "(That sure was fun.)"
      MC "(Who knew talking to an old friend or meeting a new one would be so fun?)"
      MC "(Although, the more I talk to him the more confident I am that he was the one I played with.)"
      MC "(The one that gave me the...ring.)"
      MC "(I wonder if there is a surefire way I can know. I’m pretty sure if I ask either twin they’d lie and say that they were the childhood friend.)"
      MC "(After all, if there was anything that stayed the same, it was that they liked messing with people.)"
      MC "(Maybe I can ask him about the ring?)"
-     MC "(Nah, if I got the wrong twin I’m pretty, I’m pretty sure that twin will tease me to no end.)"
+     MC "(Nah, if I got the wrong twin I’m pretty sure that twin will tease me to no end.)"
      MC "(And that'd be pretty hard to get over when you all live in the same house, even if just momentarily)"
      MC "(I need something really private, something only the two of us share. Something that’ll make it really clear that it was that specific twin.)"
      MC "(Something that not even his twin would know about)"
@@ -999,11 +999,11 @@ label start15:
          NT "“You’re not coming in?“"
      MC "“I am, wait up.“"
      scene inside
-     MC "We're back!"
+     MC "“We're back!“"
      MC "(Once we entered the home, I can see that Ms. Diascia and Mom have set the table ready for dinner. The smell of the hot soup warms my heart and stomach. I feel like I’m about to start drooling.)"
      MC "“Things like this really hammer it home that I'm back, like for real.”"
      show md happy
-     MD "“Just in time you two, grab a seat we’re ready for dinner.“"
+     MD "“Just in time you two, grab a seat. We’re ready for dinner.“"
      show md smile
      MC "“Oh great!“"
      M "“[MC], I made your favorite.“"
@@ -1038,7 +1038,7 @@ label start15:
          "Have some faith in him, I'm sure he’s fine.":
              show nt happy
              show bt smile
-             NT "“A rare occasion, someone’s on your side."
+             NT "“A rare occasion, someone’s on your side.“"
              jump start16
 
 label start16:            
@@ -1134,7 +1134,7 @@ label Asher:
 label afterbox:
      MC "(Wait a minute. This isn’t my stuff.)"
      MC "(Did I open the wrong box?)"
-     if BT_route >= 1:
+     if BT_route >= 2:
          MC "(Honestly, this looks more like something Asher would have.)"
          jump startdiary
      else:
@@ -1208,7 +1208,7 @@ label start17:
      MC "(Too late for that, I already went as far as reading his childhood journal.)"
      MC "“Oh okay, thanks for telling me.“"
      MD "“Sure thing, have a good night, [MC]. I hope you’ll enjoy your stay here.“"
-     MC "“If you need anything, just call okay?.“"
+     MD "“If you need anything, just call okay?.“"
      MC "“Sure thing.“"
      MC "“Goodnight Ms. Diascia.“"
      MD "“Goodnight [MC].“"
@@ -1464,7 +1464,7 @@ label start21:
          MC "(Suddenly his head falls to my shoulders and he starts to grip the sleeves of my shirt. He's not holding it too tightly but it’s noticeable enough that I'd feel bad if I moved away.)"
          MC "(He’s so close I can hear him breathing and with a low quiet voice he lets out...)"
          show nt brelaxed
-         NT "[MC]...Can you please stay like this for a while? I..I think I'm sick.“"
+         NT "“[MC]...Can you please stay like this for a while? I..I think I'm sick.“"
          MC "(Bingo! He’s still pulling out the sick card.)"
          MC "“Yea I can, are you okay?“"
          MC "(I know damn well he’s okay.)"
@@ -1501,7 +1501,7 @@ label start21:
          show nt questioning
          NT "“But, [MC]...“"
          show nt sick
-         MC "“His grip on my sleeves starts to tighten and I can faintly hear him grumble under his breath.“"
+         "His grip on my sleeves starts to tighten and I can faintly hear him grumble under his breath."
          MC "“Actually, I'm afraid I'll have to change my mind. I’ll stay here and take care of Florian.“"
          show bt smirk
          BT "{i}“Oh my! You worry so much about him! Maybe I'll also stay home and help you nurse him back to health.“{/i}"
@@ -1551,7 +1551,7 @@ label start21:
          MC "“You’re not lying this time, right?“"
          show nt normal
          NT "“No? But to be fair, any liar can just say that.“"
-         NT "“I wonder what i can do to prove it to you“"
+         NT "“I wonder what I can do to prove it to you“"
          MC "“I know how you can prove it.“"
          NT "“How...?“"
          MC "“Take me back to the place with all the flowers, the one you showed me the day I told you I was moving.“"
@@ -1570,7 +1570,7 @@ label start21:
          scene greenhouse with fade
          play music "audio/Confession.mp3" loop
          MC "(So it was here.)"
-         MC "(It hasn’t been any last magnificent as I’ve last seen it in my memories.)"
+         MC "(It hasn’t been any less magnificent as I’ve last seen it in my memories.)"
          MC "“So, where are we?“"
          show nt normal
          NT "“Gardenville Museum’s Greenhouse or what’s left of it.“"
@@ -1693,7 +1693,7 @@ label start21:
          NT "“[MC]? What are you doing?“"
          MC "(Oh shit, the real guy's here!)"
          show nt surprised
-         MC "There you are, I was waiting for you, let's go!“"
+         MC "“There you are, I was waiting for you, let's go!“"
          show nt grin
          MC "(I give him a pleading glance, I'm just hoping he understands and goes along with it. He’s seemingly confused for a moment until he looks over at Asher and his lips curl up into the smallest little grin.)"
          show nt happy
@@ -1702,7 +1702,7 @@ label start21:
          show nt grinning
          NT "“Be nice and guard the house while {i}I{/i} go with [MC] okay?“"
          show bt rolledeyes
-         BT "Yea, yea whatever.“"
+         BT "“Yea, yea whatever.“"
 
          scene outsideday with fade
          MC "“Thanks for playing along.“"
@@ -1713,7 +1713,7 @@ label start21:
          MC "“Tell me a spot in town with lots of flowers and a waterfall.“"
          NT "“There’s a place like that in town?“"
          show nt silent
-         MC "“I check his expression for any hints of a lie but his face remains as neutral as always, I can't seem to find any falsehoods in his words.“"
+         MC "I check his expression for any hints of a lie but his face remains as neutral as always, I can't seem to find any falsehoods in his words."
          MC "“Don’t lie to me, if you know then spill.“"
          show nt normal
          NT "“I’m not aware of the location, if anything that seems more like Asher’s spot. You might want to ask him.“"
@@ -1868,7 +1868,7 @@ label start21:
          MC "“I still have the ring by the way.“"
          MC "“Look.“"
          scene cgbt with fade
-         "As I pull out the cheap plastic ring out of my pockets, I can see his eyes shine with a mix of delight, surprise and maybe even the slightest threat of tears."
+         "As I pull out the cheap plastic ring out of my pocket, I can see his eyes shine with a mix of delight, surprise and maybe even the slightest threat of tears."
          BT "“Does this mean...?“"
          MC "“It’s my turn to say it, I love you too.“"
          BT "“So are we-“"

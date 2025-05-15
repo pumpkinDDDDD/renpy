@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 644: expected statement.
-    renpy.pause(1.0)
-                    ^
+File "game/script.rpy", line 1084: expected statement.
+    <<<<<<< HEAD
+                ^
+
+File "game/script.rpy", line 1086: expected statement.
+    =======
+          ^
+
+File "game/script.rpy", line 1089: expected statement.
+    >>>>>>> 0ec15631e387f984caca8cf5400985a6da7b5b2e
+                                                    ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Mon May  5 00:15:16 2025
+Mon May  5 20:20:16 2025

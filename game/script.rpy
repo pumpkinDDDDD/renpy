@@ -59,18 +59,18 @@ label start1:
     MC "“Sure?“"
 
     scene grey with fade
-    play sound "audio/walkdirt.mp3"
-    play sound "audio/walkdirt.mp3"
+    queue sound "audio/walkdirt.mp3"
+    queue sound "audio/walkdirt.mp3"
     MC "“Are we there yet?“"
     K "“Nope!“"
-    play sound "audio/walkdirt.mp3" 
-    play sound "audio/walkdirt.mp3"
+    queue sound "audio/walkdirt.mp3" 
+    queue sound "audio/walkdirt.mp3"
     MC "“...“"
     MC "“Are we almost there now?“"
     K "“Nope! A little more I promise.“"
     MC "“Okay?“"
-    play sound "audio/walkdirt.mp3" 
-    play sound "audio/walkdirt.mp3"
+    queue sound "audio/walkdirt.mp3" 
+    queue sound "audio/walkdirt.mp3"
     K "“Okay, now duck and crawl here.“"
     MC "“This seems suspicious, are you sure we’re going somewhere safe?“"
     K "“I’m very sure.“"
@@ -168,16 +168,16 @@ label start1:
     M "“Yep, I’ve been in contact with Ms. Diascia and she has kindly agreed to let us stay.“"
     MC "“The ones who live next door and have pink hair? Has a son my age??“"
     M "“The one and only. I figured staying with them for spring break might cheer you up, no?"
-    MC "“Really mom? .“"
-    M "Speaking of which, we’re here!“"
+    MC "“Really mom? “"
+    M "”Speaking of which, we’re here!“"
     
     menu:
          "Goodie.":
-             M "Can’t you be a little happier?"
+             M "”Can’t you be a little happier?”"
              jump start2
       
          "Woo!": 
-             M "That’s the spirit!"
+             M "”That’s the spirit!”"
              jump start2
             
     
@@ -205,13 +205,13 @@ label start2:
     scene inside with fade
     show md happy
     MD "“Welcome inside! You can put your bags over there, I'll get the boys to move your suitcases into the guest room later.“"
-    MD "“I’m sure you can’t wait to meet them [MC]. After all, you used to be so close with one of them!“"
+    MD "“I’m sure you can’t wait to meet them, [MC]. After all, you used to be so close with one of them!“"
     MD "“Although I will admit, I’m not sure which one it was.”"
     MD "“They were very hard to tell apart back then, and I was so busy I barely spent time with my boys.“"
     MC "(What?? Hard to tell apart? D-does this mean that there were-)"
     MC "“I’m sorry, hold up a sec. 'One of them'? 'Boys'? As in 'Plural'??“"
     show md joking
-    MD "“You didn’t know [MC]? My boys are twins.“"
+    MD "“You didn’t know, [MC]? My boys are twins.“"
     scene inside with vpunch
     MC "“WHAT???”"
     MC "“T-THEN, W-WHICH ONE DID I PLAY WITH??“"
@@ -454,7 +454,7 @@ label start5:
 
 label start6:
      scene guestroomday with fade
-     if NT_route >= 1:
+     if NT_route >= 2:
          MC "(Maybe it was Florian who I hung out with?)"
          jump start7
 
@@ -605,9 +605,16 @@ label start10:
              show nt normal
              NT "“Yes, I'll be staying here for spring break.“"
              W "“Nice, is that your [player_pronoun]?“"
-             if NT_route >= 1:
+             if NT_route >= 2:
                  show nt embarassed
+                 NT "“Not at all, [MC]’s a friend.“"
+                 W "“Sorry man, I thought you two seemed close.“"
                  hide b normal
+                 show nt grinning at center
+                 NT "“I suppose we are, aren’t we, [MC]?“"
+                 MC "“I don’t know about that chief, I learned your name an hour ago.“"
+                 show nt happy
+                 NT "“You have me there.“"
                  jump start11
              else:
                  show nt normal
@@ -638,7 +645,7 @@ label start10:
              show bt smirk
              BT "“Obviously, I moved out for college remember?“"
              B "“That your [player_pronoun]?“"
-             if BT_route >= 1:
+             if BT_route >= 2:
                  show bt bangry
                  BT "“No stupid, [MC]’s a friend.“"
                  B "“My bad, you two seem pretty close.“"
@@ -672,8 +679,8 @@ label start10:
                  jump start11
 
 label start11: 
-     play music "audio/footstep.mp3" 
-     stop music 
+     queue sound "audio/footstep.mp3" 
+     queue sound "audio/footstep.mp3"
      play music "audio/cafe.mp3"
      show bt normal at right
      BT "“We’re not sitting down?“"
@@ -758,7 +765,7 @@ label start12:
      play music "audio/notif.mp3"
      stop music fadeout 0.5
      play music "audio/cafe.mp3" loop
-     if BT_route >= 1:
+     if BT_route >= 2:
          show nt questioning
          NT "“Oh? That’s unfortunate.“"
          show bt questioning
@@ -852,6 +859,7 @@ label start12:
              show bt happy
              BT "“It was a pattern book, I was learning to sew.“"
              BT "“Not that i’m any good at it now.“"
+             scene cafenight
              show bt sdhuh
              BT "“Man would’ja look at the time.“"
              show bt happy
@@ -956,6 +964,7 @@ label start12:
              NT "“I believe he’s more likely to borrow a ‘How to commit tax evasion’ book.“"
              show nt grin
              MC "“I see it.“"
+             scene cafenight
              MC "“Oh shoot, it’s getting dark.“"
              show nt normal
              NT "“Would you like to return?“"
@@ -978,7 +987,7 @@ label start15:
      MC "(I need something really private, something only the two of us share. Something that’ll make it really clear that it was that specific twin.)"
      MC "(Something that not even his twin would know about)"
      MC "(There’s gotta be something right?)"
-     if BT_route >= 1:
+     if BT_route >= 2:
          show bt happy
          BT "“You’re not coming in?“"
      else :
@@ -1044,7 +1053,8 @@ label start16:
      MC "(I really should've just shoved my stuff into a suitcase, I don't know why I decided to box them.)"
      MC "(Maybe I can start with that box over there?)"
      scene box with fade 
-     if NT_route >= 1:
+     "Drag the objects inside the box to the side and click on the one on the very bottom."
+     if NT_route >= 2:
          jump Florian
      else:
          jump Asher
@@ -1135,7 +1145,7 @@ label startdiary:
      MC "(And that’ll really tell me who I played with.)"
      MC "(I mean, I already have my suspicions on which one it is but I like having irrefutable evidence at hand.)"
 
-     if NT_route >= 1:
+     if NT_route >= 2:
          show nt journal
          "Friday, X-X-XX13"
          MC "(Nice! I should still be around during this time.)"
@@ -1204,7 +1214,7 @@ label start17:
      MC "(And worse of all, all that snooping made me forget that I was supposed to unpack my all my stuff.)"
      MC "(Guess I gotta get on with it.)"
 
-     scene guestroomnight1 with wipeleft
+     scene guestroomnight1 with fade
      MC "(Well, that covers most of it?)"
      MC "(Pretty sure the other boxes are Mom’s)"
      MC "(I stretch my arms and back from all the soreness that comes with unpacking and I look at the clock.)"
@@ -1233,7 +1243,7 @@ label start17:
 label start18:
      scene oldoutside with fade
      play music "audio/flashback.mp3" loop
-     if NT_route >= 1:
+     if NT_route >= 2:
          show k worried
          K "“[MC]? Where are you going?“"
          MC "“Oh! My Mom told me to go with the other neighborhood kids to the playground.“"
@@ -1414,7 +1424,7 @@ label start21:
      MC "(Oh, there he is. There’s no one else around him right?)"
      MC "(I don’t see his twin, it’s go time.)"
 
-     if NT_route >= 1:
+     if NT_route >= 2:
          MC "“Whatcha doin'?“"
          show nt surprised
          NT "(!)"
@@ -1456,7 +1466,7 @@ label start21:
          MC "(I know damn well he’s okay.)"
          NT "“Not really? I don’t feel-“"
          show nt sdnormal at left:
-             ease .5 zoom 2.0 yalign 0.0
+             ease .5 zoom 2.0 yalign 0.0 xalign -1.0
          show bt happy at right
          BT "“Yo! What are you two doing?“"
 
@@ -1638,9 +1648,12 @@ label start21:
          MC "“Unfortunately for me, it’s working a little too well.“"
          MC "“Come here.“"
          NT "“Hmph-“"
+         scene grey
          MC "(With that, our lips united once more as we embraced amongst the flowers, sealing our relationship into a blossoming mutual agreement.)"
          MC "(Despite our years apart, our bond seemingly hasn't wavered in the slightest as it remained as strong as an iron wall. If being apart only made us grow stronger, I don't see a future where we’ll ever be apart again.)"
          "THE END : 'Florian's Route"
+         scene credit 
+         pause 3
 
      else:
          MC "“What are you doing?“"
@@ -1674,7 +1687,7 @@ label start21:
          show bt sdglare at right
          show nt normal at left
          NT "“[MC]? What are you doing?“"
-         MC "(Oh shit, the real guys here!)"
+         MC "(Oh shit, the real guy's here!)"
          show nt surprised
          MC "There you are, I was waiting for you, let's go!“"
          show nt grin
@@ -1723,8 +1736,9 @@ label start21:
          MC "(Moment of truth.)"
 
          scene inside with fade
-         show bvn window
+        
          show bt angry
+         show bvn window
          BT "{size=-7} “Stupid [MC]...goin’ out with Florian instead, hmph!“{/size}"
          BT "{size=-7}“Even though it was me you played with...“{/size}"
          BT "{size=-7}“Whatever, I guess I'll just start sketchin’ while they’re gone.“{/size}"
@@ -1748,7 +1762,6 @@ label start21:
          show bt questioning
          BT "“The doors right there!“"
          MC "“I know, but this is faster.“"
-         "*thump sfx"
          scene inside with vpunch
          show bt surprised
          MC "“Anyway, back on topic. You can’t fool me anymore, I know it was you who I played with!“"
@@ -1872,6 +1885,8 @@ label start21:
          MC "(And with one last kiss, we sealed the deal on our relationship. From simple childhood friends our feelings have blossomed into a romance I'll never forget.)"
          MC "(I don’t quite know what the future has in store for us, but I'm sure if 10 years of separation isn’t enough to pull us apart then nothing will.)"
          "THE END : Asher's Route"
+         scene credit 
+         pause 3
  
 # bang, endingnya kalau bisa kita coba ada transisi fade biar ga lgsg abrupt kaya si gr
 

@@ -1,56 +1,37 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "game/script.rpy", line 1038, in prepare_screen
-    screen drag_objects_1():
-  File "game/script.rpy", line 1038, in prepare
-    screen drag_objects_1():
-  File "game/script.rpy", line 1039, in prepare
-    draggroup:
-  File "game/script.rpy", line 1039, in prepare
-    draggroup:
-  File "game/script.rpy", line 1040, in prepare
-    drag:
-  File "game/script.rpy", line 1040, in prepare
-    drag:
-SyntaxError: invalid syntax (game/script.rpy, line 1045)
+While running game code:
+  File "game/options.rpy", line 7, in script
+    define config.has_html5 = True
+  File "game/options.rpy", line 7, in script
+    define config.has_html5 = True
+  File "renpy/common/000namespaces.rpy", line 34, in set
+    setattr(self.nso, name, value)
+Exception: config.has_html5 is not a known configuration variable.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "D:\RENPY\renpy-8.3.4-sdk\renpy\bootstrap.py", line 359, in bootstrap
     renpy.main.main()
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\main.py", line 652, in main
-    run(restart)
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\main.py", line 94, in run
-    renpy.display.screen.prepare_screens()
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\display\screen.py", line 1024, in prepare_screens
-    s.ast.prepare_screen()
-  File "game/script.rpy", line 1038, in prepare_screen
-    screen drag_objects_1():
-  File "game/script.rpy", line 1038, in prepare
-    screen drag_objects_1():
-  File "game/script.rpy", line 1039, in prepare
-    draggroup:
-  File "game/script.rpy", line 1039, in prepare
-    draggroup:
-  File "game/script.rpy", line 1040, in prepare
-    drag:
-  File "game/script.rpy", line 1040, in prepare
-    drag:
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\py3analysis.py", line 803, in ast_eval
-    return self.ast_eval_literal(expr)[0]
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\py3analysis.py", line 785, in ast_eval_literal
-    expr = py_compile(expr, 'eval', ast_node=True)
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\python.py", line 1144, in py_compile
-    raise e
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\python.py", line 1081, in py_compile
-    raise orig_e
-  File "D:\RENPY\renpy-8.3.4-sdk\renpy\python.py", line 1073, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (game/script.rpy, line 1045)
+  File "D:\RENPY\renpy-8.3.4-sdk\renpy\main.py", line 541, in main
+    renpy.game.context().run(node)
+  File "game/options.rpy", line 7, in script
+    define config.has_html5 = True
+  File "lib/python3.9/future/utils/__init__.py", line 444, in raise_
+  File "game/options.rpy", line 7, in script
+    define config.has_html5 = True
+  File "D:\RENPY\renpy-8.3.4-sdk\renpy\ast.py", line 2241, in execute
+    self.set()
+  File "D:\RENPY\renpy-8.3.4-sdk\renpy\ast.py", line 2259, in set
+    ns.set(self.varname, value)
+  File "renpy/common/000namespaces.rpy", line 34, in set
+    setattr(self.nso, name, value)
+  File "D:\RENPY\renpy-8.3.4-sdk\renpy\defaultstore.py", line 101, in __setattr__
+    raise Exception('config.%s is not a known configuration variable.' % (name))
+Exception: config.has_html5 is not a known configuration variable.
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.4.24120703
 Blossom 1.0
-Sun May  4 21:42:53 2025
+Tue May  6 00:48:19 2025
